@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>أركان | ARKAN - شاي وقهوة مختصة بروح الأصالة والمعاصرة</title>
+  <meta name="description" content="دار أركان للشاي والقهوة المختصة. توليفات شاي ملكية، محاصيل نادرة، وطقوس تحضير أصيلة تجمع بين الفخامة المعاصرة وكرم الضيافة العربية.">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              dark: '#141a13',
+              card: '#1c241b',
+              surface: '#252f24',
+              sand: '#c89b67',
+              sandLight: '#dfb17e',
+              gold: '#e5b869',
+              bgLight: '#faf8f5',
+              bgCard: '#f3efe9'
+            }
+          },
+          fontFamily: {
+            serif: ['Playfair Display', 'Readex Pro', 'serif'],
+            sans: ['Readex Pro', 'Plus Jakarta Sans', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='25' fill='%23141a13'/><path d='M50 20 C65 35 75 55 70 75 C55 80 35 70 30 50 C25 35 40 25 50 20 Z' fill='%23c89b67'/><circle cx='50' cy='50' r='6' fill='%23f7d794'/></svg>">
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body class="bg-[#faf8f5] text-[#181d17] antialiased selection:bg-[#c89b67] selection:text-white">
+
+  <!-- ================= TOP ANNOUNCEMENT BAR ================= -->
+  <div class="bg-[#141a13] text-[#f7d794] text-xs py-2 px-4 border-b border-[#c89b67]/20">
+    <div class="max-w-7xl mx-auto flex items-center justify-between">
+      <div class="flex items-center gap-2">
+        <span class="w-1.5 h-1.5 rounded-full bg-[#e5b869] animate-pulse"></span>
+        <span class="text-[11px] font-medium tracking-wide" data-i18n="cart_free_shipping">شحن مجاني لكافة طلبات النخبة فوق 200 ر.س لجميع مدن المملكة</span>
+      </div>
+      <div class="hidden sm:flex items-center gap-4 text-[11px] text-stone-300">
+        <span>الرياض • حي السفارات & العليا</span>
+        <span class="text-[#c89b67]/40">|</span>
+        <a href="tel:920000000" class="hover:text-[#f7d794] transition">خدمة النخبة: 920000000</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= NAVIGATION BAR ================= -->
+  <header class="sticky top-0 z-40 glass-nav transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      
+      <!-- Logo & Brand Badge -->
+      <a href="index.html" class="flex items-center gap-3 group">
+        <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-[#c89b67] to-[#8c673b] p-0.5 shadow-md flex items-center justify-center">
+          <div class="w-full h-full bg-[#141a13] rounded-[10px] flex items-center justify-center">
+            <span class="font-serif font-black text-xl text-[#f7d794] group-hover:scale-110 transition-transform">أ</span>
+          </div>
+        </div>
+        <div>
+          <span class="text-xl font-bold tracking-wider text-white flex items-center gap-1.5" data-i18n="brand_name">
+            أركان
+            <span class="text-[10px] tracking-widest text-[#c89b67] font-sans uppercase font-medium">ARKAN</span>
+          </span>
+          <span class="text-[10px] text-stone-400 block tracking-widest uppercase font-light" data-i18n="brand_sub">شاي وقهوة مختصة</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav class="hidden lg:flex items-center gap-8 text-sm font-medium text-stone-200">
+        <a href="index.html" class="text-[#f7d794] border-b border-[#c89b67] pb-1" data-i18n="nav_home">الرئيسية</a>
+        <a href="catalog.html" class="hover:text-[#f7d794] transition-colors pb-1" data-i18n="nav_catalog">استكشاف الشاي</a>
+        <a href="#heritage" class="hover:text-[#f7d794] transition-colors pb-1" data-i18n="nav_story">قصتنا وتراثنا</a>
+        <a href="#bestsellers" class="hover:text-[#f7d794] transition-colors pb-1" data-i18n="nav_bestsellers">الأكثر مبيعاً</a>
+        <a href="#ceremony" class="hover:text-[#f7d794] transition-colors pb-1" data-i18n="nav_ceremony">طقوس التحضير</a>
+        <a href="#contact" class="hover:text-[#f7d794] transition-colors pb-1" data-i18n="nav_contact">تواصل معنا</a>
+      </nav>
+
+      <!-- Action Icons (Lang, Search, Cart) -->
+      <div class="flex items-center gap-2 sm:gap-3">
+        <!-- Language Switcher -->
+        <button onclick="setLanguage(currentLang === 'ar' ? 'en' : 'ar')" class="px-2.5 py-1 text-xs font-semibold text-stone-200 bg-white/5 hover:bg-white/10 border border-white/10 rounded-lg transition flex items-center gap-1">
+          <i data-lucide="globe" class="w-3.5 h-3.5 text-[#c89b67]"></i>
+          <span id="lang-toggle-text">EN</span>
+        </button>
+
+        <!-- Search Button -->
+        <button onclick="toggleSearchModal(true)" class="w-9 h-9 rounded-lg bg-white/5 hover:bg-white/10 border border-white/10 flex items-center justify-center text-stone-200 hover:text-white transition">
+          <i data-lucide="search" class="w-4 h-4"></i>
+        </button>
+
+        <!-- Cart Button with Dynamic Badge -->
+        <button onclick="toggleCartDrawer(true)" class="relative px-3.5 py-2 rounded-xl bg-[#c89b67] hover:bg-[#dfb17e] text-stone-950 font-semibold text-xs transition flex items-center gap-2 shadow-md">
+          <i data-lucide="shopping-bag" class="w-4 h-4"></i>
+          <span class="hidden sm:inline" data-i18n="cart_title">السلة</span>
+          <span class="cart-count-badge w-5 h-5 rounded-full bg-[#141a13] text-[#f7d794] text-[10px] font-bold flex items-center justify-center">2</span>
+        </button>
+
+        <!-- Mobile Menu Trigger -->
+        <button onclick="document.getElementById('mobile-nav').classList.toggle('hidden')" class="lg:hidden w-9 h-9 rounded-lg bg-white/5 text-stone-200 flex items-center justify-center">
+          <i data-lucide="menu" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+    </div>
+
+    <!-- Mobile Nav Dropdown -->
+    <div id="mobile-nav" class="hidden lg:hidden bg-[#141a13] border-b border-[#c89b67]/20 px-6 py-4 space-y-3 text-sm text-stone-200">
+      <a href="index.html" class="block py-1 text-[#f7d794]" data-i18n="nav_home">الرئيسية</a>
+      <a href="catalog.html" class="block py-1 hover:text-[#f7d794]" data-i18n="nav_catalog">استكشاف الشاي</a>
+      <a href="#heritage" class="block py-1 hover:text-[#f7d794]" data-i18n="nav_story">قصتنا وتراثنا</a>
+      <a href="#bestsellers" class="block py-1 hover:text-[#f7d794]" data-i18n="nav_bestsellers">الأكثر مبيعاً</a>
+      <a href="#ceremony" class="block py-1 hover:text-[#f7d794]" data-i18n="nav_ceremony">طقوس التحضير</a>
+      <a href="#contact" class="block py-1 hover:text-[#f7d794]" data-i18n="nav_contact">تواصل معنا</a>
+    </div>
+  </header>
+
+  <!-- ================= HERO SECTION ================= -->
+  <section class="relative bg-gradient-to-b from-[#141a13] via-[#1a2219] to-[#141a13] text-white pt-12 pb-24 overflow-hidden">
+    <!-- Ambient Backing Lights -->
+    <div class="absolute -top-40 right-1/4 w-96 h-96 bg-[#c89b67]/15 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="absolute -bottom-20 left-10 w-80 h-80 bg-[#1e2e1c]/40 rounded-full blur-2xl pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Left Content (7 Cols) -->
+        <div class="lg:col-span-7 space-y-6 text-center lg:text-start">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/5 border border-[#c89b67]/30 text-xs text-[#f7d794]">
+            <span class="w-2 h-2 rounded-full bg-[#c89b67] pulse-glow"></span>
+            <span data-i18n="hero_badge">أوراق نادرة • حصاد يدوي فاخر 2026</span>
+          </div>
+
+          <h1 class="text-3xl sm:text-5xl lg:text-6xl font-bold leading-tight font-serif" data-i18n="hero_title">
+            تجربة الشاي الفاخر بروح الأصالة والمعاصرة
+          </h1>
+
+          <p class="text-base sm:text-lg text-stone-300 leading-relaxed max-w-2xl font-light" data-i18n="hero_desc">
+            ننتقي أندر أوراق الشاي من أعلى قمم الجبال العالمية، ونمزجها بعراقة الضيافة العربية لنقدم لك كأساً يلامس الحواس بترف استثنائي.
+          </p>
+
+          <!-- Flavor Highlights -->
+          <div class="pt-2 flex flex-wrap items-center justify-center lg:justify-start gap-3">
+            <span class="text-xs text-[#c89b67] font-medium">نوتات المحصول الملكي:</span>
+            <span class="flavor-pill">عسل جبلي نقي</span>
+            <span class="flavor-pill">خشب الصندل العتيق</span>
+            <span class="flavor-pill">زعفران أحمر فاخر</span>
+          </div>
+
+          <!-- CTAs -->
+          <div class="pt-4 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+            <a href="catalog.html" class="w-full sm:w-auto px-8 py-3.5 rounded-xl bg-[#c89b67] hover:bg-[#dfb17e] text-stone-950 font-bold text-sm transition-all transform hover:-translate-y-0.5 shadow-lg shadow-[#c89b67]/20 flex items-center justify-center gap-2">
+              <span data-i18n="hero_btn_explore">استكشف التشكيلة الكاملة</span>
+              <i data-lucide="arrow-left" class="w-4 h-4 rtl:rotate-0 ltr:rotate-180"></i>
+            </a>
+
+            <a href="#heritage" class="w-full sm:w-auto px-7 py-3.5 rounded-xl bg-white/5 hover:bg-white/10 text-stone-200 border border-white/10 font-medium text-sm transition flex items-center justify-center gap-2">
+              <i data-lucide="compass" class="w-4 h-4 text-[#c89b67]"></i>
+              <span data-i18n="hero_btn_story">عالم أركان وتراثنا</span>
+            </a>
+          </div>
+
+          <!-- Trust Badges -->
+          <div class="pt-8 border-t border-white/10 grid grid-cols-3 gap-4 text-center lg:text-start">
+            <div>
+              <span class="block text-xl font-bold text-[#f7d794]">+100%</span>
+              <span class="text-xs text-stone-400">محاصيل عضوية نقية</span>
+            </div>
+            <div>
+              <span class="block text-xl font-bold text-[#f7d794]">1800م</span>
+              <span class="text-xs text-stone-400">ارتفاع مزارع السيلان</span>
+            </div>
+            <div>
+              <span class="block text-xl font-bold text-[#f7d794]">4.9 / 5</span>
+              <span class="text-xs text-stone-400">تقييم النخبة والذواقة</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Visual Showcase (5 Cols) -->
+        <div class="lg:col-span-5 relative">
+          <!-- Main Hero Showcase Card -->
+          <div class="relative rounded-3xl p-6 glass-card-dark shadow-2xl overflow-hidden group">
+            <div class="relative h-80 sm:h-96 rounded-2xl overflow-hidden mb-5">
+              <img src="https://images.unsplash.com/photo-1576092768241-dec231879fc3?auto=format&fit=crop&w=1000&q=80" alt="ARKAN Luxury Tea Packaging" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+              
+              <!-- Floating Card with Cup & Packaging -->
+              <div class="absolute bottom-4 inset-x-4 p-4 rounded-xl bg-[#141a13]/90 backdrop-blur-md border border-[#c89b67]/30 flex items-center justify-between">
+                <div>
+                  <span class="text-[10px] text-[#c89b67] tracking-wider uppercase font-semibold">التوليفة الملكية الخاصة</span>
+                  <h4 class="text-sm font-bold text-white">شاي أسود معتق مع عبوة حافظة</h4>
+                </div>
+                <button onclick="addToCart(1)" class="w-9 h-9 rounded-lg bg-[#c89b67] hover:bg-[#dfb17e] text-stone-950 flex items-center justify-center transition shadow-md">
+                  <i data-lucide="plus" class="w-4 h-4"></i>
+                </button>
+              </div>
+            </div>
+
+            <!-- Mini Spec Highlights -->
+            <div class="grid grid-cols-2 gap-3 text-xs">
+              <div class="p-3 rounded-xl bg-white/5 border border-white/5">
+                <span class="text-stone-400 block text-[10px]">درجة الحرارة</span>
+                <span class="font-bold text-[#f7d794]">95°C درجة مئوية</span>
+              </div>
+              <div class="p-3 rounded-xl bg-white/5 border border-white/5">
+                <span class="text-stone-400 block text-[10px]">وقت الاستخلاص</span>
+                <span class="font-bold text-[#f7d794]">3-4 دقائق فقط</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= HERITAGE & CONTEMPORARY CULTURE ================= -->
+  <!-- Modernized replacement for the bright orange block from image 1 -->
+  <section id="heritage" class="py-20 bg-gradient-to-r from-[#b5854f] via-[#c89b67] to-[#b5854f] text-stone-950 relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Text Story -->
+        <div class="lg:col-span-6 space-y-6">
+          <span class="text-xs font-bold tracking-widest text-stone-900/80 uppercase" data-i18n="heritage_sub">
+            أصالة التراث وعصرية الذوق
+          </span>
+
+          <h2 class="text-3xl sm:text-4xl font-bold font-serif leading-tight text-stone-950" data-i18n="heritage_title">
+            حيث يلتقي عبق القصور النجدية بأرقى مزارع الشاي العالمية
+          </h2>
+
+          <p class="text-stone-900/90 text-base leading-relaxed" data-i18n="heritage_desc">
+            في أركان، لا نقدم مجرد مشروب، بل نروي حكاية كرم الضيافة العربية الأصيلة ممتزجة بأحدث معايير التحضير المختص. من علب الشاي المعدنية المنقوشة بزخارف معمارية أصيلة إلى الأكواب المحمولة بتصميمها العصري الأيقوني.
+          </p>
+
+          <!-- 3 Value Pillars -->
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4">
+            <div class="p-4 rounded-xl bg-white/30 backdrop-blur-md border border-white/40">
+              <span class="font-bold text-base block text-stone-950" data-i18n="heritage_stat1">+40 محصول نادر</span>
+              <span class="text-xs text-stone-800" data-i18n="heritage_stat1_desc">مباشرة من مزارع فردية معتمدة</span>
+            </div>
+            <div class="p-4 rounded-xl bg-white/30 backdrop-blur-md border border-white/40">
+              <span class="font-bold text-base block text-stone-950" data-i18n="heritage_stat2">100% عضوي ومستدام</span>
+              <span class="text-xs text-stone-800" data-i18n="heritage_stat2_desc">بدون أي إضافات صناعية</span>
+            </div>
+            <div class="p-4 rounded-xl bg-white/30 backdrop-blur-md border border-white/40">
+              <span class="font-bold text-base block text-stone-950" data-i18n="heritage_stat3">شحن مبرد وفاخر</span>
+              <span class="text-xs text-stone-800" data-i18n="heritage_stat3_desc">لحفظ الزيوت العطرية والنضارة</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Architectural & Heritage Photo Duo -->
+        <div class="lg:col-span-6 grid grid-cols-2 gap-4">
+          <div class="relative rounded-2xl overflow-hidden shadow-2xl h-72 sm:h-80 transform -rotate-1 hover:rotate-0 transition duration-500">
+            <img src="https://images.unsplash.com/photo-1549880338-65ddcdfd017b?auto=format&fit=crop&w=800&q=80" alt="Arabian Heritage Architecture" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-t from-stone-950/60 via-transparent to-transparent flex items-end p-4">
+              <span class="text-white text-xs font-semibold">العمارة الطينية النجدية وتراث الضيافة</span>
+            </div>
+          </div>
+
+          <div class="relative rounded-2xl overflow-hidden shadow-2xl h-72 sm:h-80 transform rotate-2 hover:rotate-0 transition duration-500 mt-6 sm:mt-10">
+            <img src="https://images.unsplash.com/photo-1576092768241-dec231879fc3?auto=format&fit=crop&w=800&q=80" alt="Ceremonial Tea Service" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-t from-stone-950/60 via-transparent to-transparent flex items-end p-4">
+              <span class="text-white text-xs font-semibold">طقوس السكب والضيافة الرفيعة</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SHOP OUR BESTSELLERS & INTERACTIVE SOMMELIER ================= -->
+  <section id="bestsellers" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="mb-8">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+        <div>
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#c89b67]/15 text-[#c89b67] text-xs font-semibold mb-2">
+            <i data-lucide="sparkles" class="w-3.5 h-3.5"></i>
+            <span data-i18n="bestsellers_sub">مختارات الصفوة • The Reserve Lot</span>
+          </div>
+          <h2 class="text-2xl sm:text-3xl font-bold font-serif text-stone-900" data-i18n="bestsellers_title">المنتجات الأكثر طلباً وتفضيلاً</h2>
+          <p class="text-xs sm:text-sm text-stone-500 mt-1 max-w-xl">استكشف أرقى محاصيل الشاي إما بحسب نوع الأوراق أو استخدم مساعد الذوق الذكي أدناه ليقترح لك التوليفة المناسبة لحالتك الآن.</p>
+        </div>
+
+        <a href="catalog.html" class="inline-flex items-center gap-1.5 text-xs font-bold text-[#c89b67] hover:text-[#141a13] transition self-start md:self-end pb-1 border-b border-[#c89b67]/40">
+          <span>عرض الكتالوج الشامل (+24 صنف)</span>
+          <i data-lucide="arrow-left" class="w-3.5 h-3.5 rtl:rotate-0 ltr:rotate-180"></i>
+        </a>
+      </div>
+    </div>
+
+    <!-- Interactive Sensory Sommelier & Filter Hub -->
+    <div class="mb-8 space-y-4">
+      
+      <!-- Part 1: Sensory Sommelier Box (مساعد الذوق التفاعلي) -->
+      <div class="p-5 sm:p-6 rounded-3xl bg-gradient-to-br from-[#141a13] via-[#1b231a] to-[#141a13] text-white border border-[#c89b67]/35 shadow-xl">
+        <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 mb-4">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-2xl bg-[#c89b67]/20 border border-[#c89b67]/40 flex items-center justify-center text-[#f7d794] shrink-0">
+              <i data-lucide="sparkles" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <h3 class="text-sm sm:text-base font-bold text-white flex items-center gap-2">
+                <span>مساعد الذوق التفاعلي (Sensory Sommelier)</span>
+                <span class="px-2 py-0.5 text-[10px] font-medium bg-[#c89b67] text-stone-950 rounded-full">ذكي وتفاعلي</span>
+              </h3>
+              <p class="text-xs text-stone-300">كيف تود أن تشعر اليوم؟ انقر على حالتك وسيقوم النظام فوراً بتصفية الشاي الأنسب لك في القائمة أدناه:</p>
+            </div>
+          </div>
+
+          <div class="text-xs text-stone-400 hidden lg:block">
+            <span>تحديث فوري للقائمة تلقائياً</span>
+          </div>
+        </div>
+
+        <!-- 3 Prominent Mood Selector Buttons -->
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-1">
+          <button onclick="filterByMood('relax')" data-mood="relax" class="mood-pill px-4 py-3 rounded-2xl font-semibold text-xs transition flex items-center justify-between group shadow-sm">
+            <div class="flex items-center gap-2.5">
+              <span class="text-lg">🌿</span>
+              <div class="text-start">
+                <span class="block font-bold">استرخاء وسكينة</span>
+                <span class="text-[10px] opacity-75">بابونج، خزامى، شاي أبيض نقي</span>
+              </div>
+            </div>
+            <span class="text-[11px] px-2 py-0.5 rounded-full bg-black/10 group-hover:bg-black/20 font-bold">3 أصناف</span>
+          </button>
+
+          <button onclick="filterByMood('focus')" data-mood="focus" class="mood-pill px-4 py-3 rounded-2xl font-semibold text-xs transition flex items-center justify-between group shadow-sm">
+            <div class="flex items-center gap-2.5">
+              <span class="text-lg">☕</span>
+              <div class="text-start">
+                <span class="block font-bold">صفاء وتركيز</span>
+                <span class="text-[10px] opacity-75">شاي أسود معتق، أولونغ صخري</span>
+              </div>
+            </div>
+            <span class="text-[11px] px-2 py-0.5 rounded-full bg-black/10 group-hover:bg-black/20 font-bold">2 أصناف</span>
+          </button>
+
+          <button onclick="filterByMood('energize')" data-mood="energize" class="mood-pill px-4 py-3 rounded-2xl font-semibold text-xs transition flex items-center justify-between group shadow-sm">
+            <div class="flex items-center gap-2.5">
+              <span class="text-lg">⚡</span>
+              <div class="text-start">
+                <span class="block font-bold">طاقة وانتعاش</span>
+                <span class="text-[10px] opacity-75">ماتشا احتفالية، توليفة الهيل والزعفران</span>
+              </div>
+            </div>
+            <span class="text-[11px] px-2 py-0.5 rounded-full bg-black/10 group-hover:bg-black/20 font-bold">3 أصناف</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Part 2: Category Filter Bar -->
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 p-3 bg-white rounded-2xl border border-stone-200/80 shadow-sm">
+        <div class="flex items-center gap-2 text-xs font-semibold text-stone-500 ps-2">
+          <i data-lucide="layers" class="w-4 h-4 text-[#c89b67]"></i>
+          <span>تصفح حسب تصنيف المحصول:</span>
+        </div>
+
+        <div class="flex flex-wrap gap-1.5">
+          <button onclick="setCategoryFilter('all')" class="category-pill active px-3.5 py-1.5 text-xs font-semibold rounded-xl border border-stone-200 bg-stone-50 text-stone-800 hover:border-[#c89b67]" data-category="all" data-i18n="cat_all">الكل</button>
+          <button onclick="setCategoryFilter('black')" class="category-pill px-3.5 py-1.5 text-xs font-semibold rounded-xl border border-stone-200 bg-stone-50 text-stone-800 hover:border-[#c89b67]" data-category="black" data-i18n="cat_black">شاي أسود</button>
+          <button onclick="setCategoryFilter('white')" class="category-pill px-3.5 py-1.5 text-xs font-semibold rounded-xl border border-stone-200 bg-stone-50 text-stone-800 hover:border-[#c89b67]" data-category="white" data-i18n="cat_white">شاي أبيض</button>
+          <button onclick="setCategoryFilter('green')" class="category-pill px-3.5 py-1.5 text-xs font-semibold rounded-xl border border-stone-200 bg-stone-50 text-stone-800 hover:border-[#c89b67]" data-category="green">ماتشا وأخضر</button>
+          <button onclick="setCategoryFilter('herbal')" class="category-pill px-3.5 py-1.5 text-xs font-semibold rounded-xl border border-stone-200 bg-stone-50 text-stone-800 hover:border-[#c89b67]" data-category="herbal" data-i18n="cat_herbal">أعشاب وبابونج</button>
+          <button onclick="setCategoryFilter('oolong')" class="category-pill px-3.5 py-1.5 text-xs font-semibold rounded-xl border border-stone-200 bg-stone-50 text-stone-800 hover:border-[#c89b67]" data-category="oolong">أولونغ صخري</button>
+          <button onclick="setCategoryFilter('teaware')" class="category-pill px-3.5 py-1.5 text-xs font-semibold rounded-xl border border-stone-200 bg-stone-50 text-stone-800 hover:border-[#c89b67]" data-category="teaware" data-i18n="cat_teaware">أدوات وأكواب</button>
+        </div>
+      </div>
+
+      <!-- Active Filter Banner (Visible when any filter is selected) -->
+      <div class="active-filter-banner-el hidden p-3.5 rounded-2xl bg-[#141a13] text-[#f7d794] border border-[#c89b67]/40 shadow-md">
+        <!-- Rendered dynamically by app.js updateFilterUIState -->
+      </div>
+
+    </div>
+
+    <!-- Product Grid -->
+    <div id="products-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <!-- Rendered dynamically by app.js -->
+    </div>
+
+    <div class="mt-12 text-center">
+      <a href="catalog.html" class="inline-flex items-center gap-2 px-8 py-3.5 rounded-xl bg-[#141a13] hover:bg-[#c89b67] text-[#f7d794] hover:text-stone-950 font-semibold text-xs tracking-wide transition shadow-lg">
+        <span data-i18n="cart_view_catalog">تصفح الكتالوج الكامل والندرات (+24 صنف)</span>
+        <i data-lucide="arrow-left" class="w-4 h-4 rtl:rotate-0 ltr:rotate-180"></i>
+      </a>
+    </div>
+  </section>
+
+  <!-- ================= BENTO GRID: SHOP BY CATEGORIES ================= -->
+  <!-- Modernized replacement for the category photos collage in image 1 -->
+  <section class="py-20 bg-[#f3efe9] border-y border-stone-200/60">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-xl mx-auto mb-12">
+        <span class="text-xs font-semibold uppercase tracking-wider text-[#c89b67]" data-i18n="categories_sub">استكشف عالم النكهات</span>
+        <h2 class="text-2xl sm:text-3xl font-bold font-serif text-stone-900 mt-1" data-i18n="categories_title">تصنيفات الشاي والأدوات الفاخرة</h2>
+      </div>
+
+      <!-- Bento Grid Layout -->
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-5 h-auto">
+        
+        <!-- Large Card 1: Loose Leaf Black & Reserve (Col 7) -->
+        <a href="catalog.html?category=black" class="md:col-span-7 relative h-80 rounded-3xl overflow-hidden group shadow-md cursor-pointer">
+          <img src="https://images.unsplash.com/photo-1594631252845-29fc4cc8cde9?auto=format&fit=crop&w=1000&q=80" alt="Black Tea & Spices" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
+          <div class="absolute inset-0 bg-gradient-to-t from-stone-950/85 via-stone-950/40 to-transparent flex flex-col justify-end p-8 text-white">
+            <span class="text-xs font-semibold text-[#f7d794] uppercase tracking-wider mb-1">الركن الأسود والتوابل الملكية</span>
+            <h3 class="text-2xl font-bold font-serif mb-2">أوراق الشاي الأسود ومزيج الهيل والزعفران</h3>
+            <p class="text-xs text-stone-300 max-w-md">توليفات كلاسيكية تفيض بالدفء والعمق، معتقة ومحضرة بحرفية فائقة.</p>
+          </div>
+        </a>
+
+        <!-- Card 2: Herbal & Chamomile (Col 5) -->
+        <a href="catalog.html?category=herbal" class="md:col-span-5 relative h-80 rounded-3xl overflow-hidden group shadow-md cursor-pointer">
+          <img src="https://images.unsplash.com/photo-1544787219-7f47ccb76574?auto=format&fit=crop&w=800&q=80" alt="Herbal Chamomile" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
+          <div class="absolute inset-0 bg-gradient-to-t from-stone-950/85 via-stone-950/30 to-transparent flex flex-col justify-end p-8 text-white">
+            <span class="text-xs font-semibold text-[#f7d794] uppercase tracking-wider mb-1">عالم الأعشاب والسكينة</span>
+            <h3 class="text-xl font-bold font-serif mb-1">البابونج، الخزامى، ونعناع المدينة</h3>
+            <p class="text-xs text-stone-300">خالية من الكافيين لتمنحك نوماً هانئاً واسترخاءً عميقاً.</p>
+          </div>
+        </a>
+
+        <!-- Card 3: Ceremonial Matcha & Green (Col 4) -->
+        <a href="catalog.html?category=green" class="md:col-span-4 relative h-72 rounded-3xl overflow-hidden group shadow-md cursor-pointer">
+          <img src="https://images.unsplash.com/photo-1536256263959-770b48d82b0a?auto=format&fit=crop&w=800&q=80" alt="Matcha" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
+          <div class="absolute inset-0 bg-gradient-to-t from-stone-950/85 via-stone-950/30 to-transparent flex flex-col justify-end p-6 text-white">
+            <span class="text-[11px] font-semibold text-[#f7d794] uppercase tracking-wider mb-1">ماتشا أوجي اليابانية</span>
+            <h3 class="text-lg font-bold font-serif mb-1">الماتشا الاحتفالية والشاي الأخضر</h3>
+          </div>
+        </a>
+
+        <!-- Card 4: Artisanal Stoneware & Teapots (Col 4) -->
+        <a href="catalog.html?category=teaware" class="md:col-span-4 relative h-72 rounded-3xl overflow-hidden group shadow-md cursor-pointer">
+          <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=800&q=80" alt="Ceramic Teapots" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
+          <div class="absolute inset-0 bg-gradient-to-t from-stone-950/85 via-stone-950/30 to-transparent flex flex-col justify-end p-6 text-white">
+            <span class="text-[11px] font-semibold text-[#f7d794] uppercase tracking-wider mb-1">حرفية الخزف اليدوي</span>
+            <h3 class="text-lg font-bold font-serif mb-1">أباريق وأكواب التقديم الفاخرة</h3>
+          </div>
+        </a>
+
+        <!-- Card 5: Iconic To-Go Cups & Lifestyle (Col 4) -->
+        <a href="catalog.html?category=teaware" class="md:col-span-4 relative h-72 rounded-3xl overflow-hidden group shadow-md cursor-pointer">
+          <img src="https://images.unsplash.com/photo-1517256064527-09c73fc73e38?auto=format&fit=crop&w=800&q=80" alt="To-Go Coffee & Tea Cups" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
+          <div class="absolute inset-0 bg-gradient-to-t from-stone-950/85 via-stone-950/30 to-transparent flex flex-col justify-end p-6 text-white">
+            <span class="text-[11px] font-semibold text-[#f7d794] uppercase tracking-wider mb-1">سلسلة الأكواب المحمولة</span>
+            <h3 class="text-lg font-bold font-serif mb-1">أكواب أركان العازلة الصديقة للبيئة</h3>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= PRIVATE TEA SALON & CONCIERGE TASTING ================= -->
+  <section class="py-16 bg-gradient-to-b from-[#141a13] to-[#1c241b] text-white relative overflow-hidden">
+    <div class="absolute -top-32 -left-32 w-80 h-80 bg-[#c89b67]/10 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+      <div class="w-12 h-12 mx-auto mb-4 rounded-2xl bg-[#c89b67]/20 border border-[#c89b67]/40 flex items-center justify-center text-[#f7d794]">
+        <i data-lucide="crown" class="w-6 h-6"></i>
+      </div>
+      <span class="text-xs font-semibold text-[#c89b67] uppercase tracking-widest block mb-2">خدمة النخبة الحصرية</span>
+      <h2 class="text-2xl sm:text-3xl font-bold font-serif mb-4">جلسات التذوق الخاصة في صالون أركان (حي السفارات)</h2>
+      <p class="text-stone-300 text-xs sm:text-sm max-w-2xl mx-auto leading-relaxed mb-8">
+        استمتع بتجربة حسية متكاملة برفقة خبير الشاي المعتمد (Tea Sommelier) لاكتشاف أندر مواسم الحصاد وطرق الاستخلاص الاحتفالية في أجواء نجدية معاصرة ومترفة.
+      </p>
+
+      <div class="flex flex-wrap items-center justify-center gap-4">
+        <a href="#contact" class="px-7 py-3 rounded-xl bg-[#c89b67] hover:bg-[#dfb17e] text-stone-950 font-bold text-xs tracking-wider transition shadow-lg flex items-center gap-2">
+          <i data-lucide="calendar" class="w-4 h-4"></i>
+          <span>حجز جلسة تذوق خاصة</span>
+        </a>
+        <a href="tel:920000000" class="px-7 py-3 rounded-xl bg-white/5 hover:bg-white/10 text-stone-200 border border-white/10 font-semibold text-xs tracking-wider transition flex items-center gap-2">
+          <i data-lucide="phone-call" class="w-4 h-4 text-[#c89b67]"></i>
+          <span>تواصل مع كونسيرج أركان</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= TEA CEREMONY / BREWING RITUALS ================= -->
+  <section id="ceremony" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      
+      <div class="lg:col-span-5 relative">
+        <div class="rounded-3xl overflow-hidden shadow-2xl border border-stone-200">
+          <img src="https://images.unsplash.com/photo-1597481499750-3e6b22637e12?auto=format&fit=crop&w=900&q=80" alt="Tea Infusion Pour" class="w-full h-96 object-cover">
+        </div>
+      </div>
+
+      <div class="lg:col-span-7 space-y-6">
+        <span class="text-xs font-semibold uppercase tracking-wider text-[#c89b67]">فن التحضير الملكي</span>
+        <h2 class="text-2xl sm:text-3xl font-bold font-serif text-stone-900">أسرار استخلاص النكهات الكاملة لورقة الشاي</h2>
+        <p class="text-stone-600 text-sm leading-relaxed">
+          ورقة الشاي كائن حي يتنفس؛ درجة حرارة الماء ونوعية الإناء وزمن السكب هي ما يحول الكوب من مجرد شاي إلى تجربة حسية خالدة.
+        </p>
+
+        <!-- 3 Step Guide -->
+        <div class="space-y-4 pt-2">
+          <div class="flex items-start gap-4 p-4 rounded-2xl bg-white border border-stone-200/70 shadow-sm">
+            <span class="w-8 h-8 rounded-xl bg-[#141a13] text-[#f7d794] flex items-center justify-center font-bold text-xs shrink-0">1</span>
+            <div>
+              <h4 class="text-xs font-bold text-stone-900 mb-1">درجة حرارة الماء المدروسة</h4>
+              <p class="text-xs text-stone-500">لا تغلي الماء أبداً فوق 80°C للشاي الأبيض والماتشا لحماية مضادات الأكسدة والسكريات الطبيعية.</p>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-4 p-4 rounded-2xl bg-white border border-stone-200/70 shadow-sm">
+            <span class="w-8 h-8 rounded-xl bg-[#c89b67] text-stone-950 flex items-center justify-center font-bold text-xs shrink-0">2</span>
+            <div>
+              <h4 class="text-xs font-bold text-stone-900 mb-1">شطف الأوراق الأولي (إيقاظ الروح)</h4>
+              <p class="text-xs text-stone-500">صب الماء لمدة 5 ثوان ثم اسكبه، هذا يفتح مسام الورقة ويحرر العبير الزيتي الدفين.</p>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-4 p-4 rounded-2xl bg-white border border-stone-200/70 shadow-sm">
+            <span class="w-8 h-8 rounded-xl bg-[#141a13] text-[#f7d794] flex items-center justify-center font-bold text-xs shrink-0">3</span>
+            <div>
+              <h4 class="text-xs font-bold text-stone-900 mb-1">السكب الانسيابي من ارتفاع معتدل</h4>
+              <p class="text-xs text-stone-500">يساعد السكب المتوازن على إدخال فقاعات الأكسجين في السائل مما يمنح قواماً مخملياً في الفم.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= INSTAGRAM / COMMUNITY FEED ================= -->
+  <!-- Modernized version of image 1's "RUKN's Insta Feed" with takeaway cups -->
+  <section class="py-16 bg-[#faf8f5]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col sm:flex-row items-center justify-between mb-8">
+        <div>
+          <span class="text-xs font-semibold text-[#c89b67] uppercase tracking-wider">مجتمع أركان</span>
+          <h2 class="text-xl sm:text-2xl font-bold font-serif text-stone-900">#أركان_في_يومك على إنستغرام</h2>
+        </div>
+        <a href="https://instagram.com" target="_blank" class="text-xs font-semibold text-[#c89b67] hover:underline flex items-center gap-1 mt-2 sm:mt-0">
+          <span>@arkan.tea.roastery</span>
+          <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+        </a>
+      </div>
+
+      <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-3">
+        <div class="relative rounded-2xl overflow-hidden aspect-square group shadow-sm">
+          <img src="https://images.unsplash.com/photo-1517256064527-09c73fc73e38?auto=format&fit=crop&w=400&q=80" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" alt="">
+          <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center text-white">
+            <i data-lucide="instagram" class="w-5 h-5"></i>
+          </div>
+        </div>
+        <div class="relative rounded-2xl overflow-hidden aspect-square group shadow-sm">
+          <img src="https://images.unsplash.com/photo-1576092768241-dec231879fc3?auto=format&fit=crop&w=400&q=80" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" alt="">
+          <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center text-white">
+            <i data-lucide="instagram" class="w-5 h-5"></i>
+          </div>
+        </div>
+        <div class="relative rounded-2xl overflow-hidden aspect-square group shadow-sm">
+          <img src="https://images.unsplash.com/photo-1544787219-7f47ccb76574?auto=format&fit=crop&w=400&q=80" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" alt="">
+          <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center text-white">
+            <i data-lucide="instagram" class="w-5 h-5"></i>
+          </div>
+        </div>
+        <div class="relative rounded-2xl overflow-hidden aspect-square group shadow-sm">
+          <img src="https://images.unsplash.com/photo-1536256263959-770b48d82b0a?auto=format&fit=crop&w=400&q=80" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" alt="">
+          <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center text-white">
+            <i data-lucide="instagram" class="w-5 h-5"></i>
+          </div>
+        </div>
+        <div class="relative rounded-2xl overflow-hidden aspect-square group shadow-sm">
+          <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=400&q=80" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" alt="">
+          <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center text-white">
+            <i data-lucide="instagram" class="w-5 h-5"></i>
+          </div>
+        </div>
+        <div class="relative rounded-2xl overflow-hidden aspect-square group shadow-sm">
+          <img src="https://images.unsplash.com/photo-1594631252845-29fc4cc8cde9?auto=format&fit=crop&w=400&q=80" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" alt="">
+          <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center text-white">
+            <i data-lucide="instagram" class="w-5 h-5"></i>
+          </div>
+        </div>
+        <div class="relative rounded-2xl overflow-hidden aspect-square group shadow-sm">
+          <img src="https://images.unsplash.com/photo-1564890369478-c89ca6d9cde9?auto=format&fit=crop&w=400&q=80" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" alt="">
+          <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center text-white">
+            <i data-lucide="instagram" class="w-5 h-5"></i>
+          </div>
+        </div>
+        <div class="relative rounded-2xl overflow-hidden aspect-square group shadow-sm">
+          <img src="https://images.unsplash.com/photo-1597481499750-3e6b22637e12?auto=format&fit=crop&w=400&q=80" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" alt="">
+          <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center text-white">
+            <i data-lucide="instagram" class="w-5 h-5"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= VIP NEWSLETTER SECTION ================= -->
+  <section class="py-16 bg-gradient-to-r from-[#c89b67] via-[#dfb17e] to-[#c89b67] text-stone-950">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <span class="text-xs font-bold tracking-widest uppercase text-stone-900/80 block mb-2" data-i18n="newsletter_sub">نادي أركان الخاص</span>
+      <h2 class="text-2xl sm:text-3xl font-bold font-serif mb-4" data-i18n="newsletter_title">انضم إلى مجتمع الذواقة واحصل على دعوات حصرية لندرات المحاصيل</h2>
+      
+      <form onsubmit="handleNewsletter(event)" class="max-w-md mx-auto flex flex-col sm:flex-row gap-2 mt-6">
+        <input type="email" id="newsletter-email" required placeholder="أدخل بريدك الإلكتروني هنا..." data-i18n-placeholder="newsletter_placeholder" class="flex-1 px-5 py-3 rounded-xl bg-white/95 text-stone-900 text-xs placeholder:text-stone-400 focus:outline-none focus:ring-2 focus:ring-[#141a13] shadow-inner">
+        <button type="submit" class="px-6 py-3 rounded-xl bg-[#141a13] hover:bg-stone-900 text-[#f7d794] text-xs font-bold transition shadow-md whitespace-nowrap" data-i18n="newsletter_btn">
+          انضمام حصري
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <!-- ================= COMPREHENSIVE FOOTER ================= -->
+  <footer id="contact" class="bg-[#141a13] text-stone-300 pt-16 pb-12 border-t border-[#c89b67]/20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-10 pb-12 border-b border-white/10">
+        
+        <!-- Brand Bio (Col 4) -->
+        <div class="md:col-span-4 space-y-4">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-[#c89b67] flex items-center justify-center font-serif font-black text-stone-950 text-lg">أ</div>
+            <span class="text-xl font-bold text-white tracking-wider">أركان <span class="text-xs text-[#c89b67]">ARKAN</span></span>
+          </div>
+          <p class="text-xs text-stone-400 leading-relaxed" data-i18n="footer_desc">
+            دار أركان للشاي والقهوة المختصة. نحتفي بأصالة الضيافة العربية عبر أفخر محاصيل الشاي الحرفية في العالم.
+          </p>
+          <div class="flex items-center gap-3 text-stone-400 pt-2">
+            <a href="#" class="w-8 h-8 rounded-lg bg-white/5 hover:bg-[#c89b67] hover:text-stone-950 flex items-center justify-center transition"><i data-lucide="instagram" class="w-4 h-4"></i></a>
+            <a href="#" class="w-8 h-8 rounded-lg bg-white/5 hover:bg-[#c89b67] hover:text-stone-950 flex items-center justify-center transition"><i data-lucide="twitter" class="w-4 h-4"></i></a>
+            <a href="#" class="w-8 h-8 rounded-lg bg-white/5 hover:bg-[#c89b67] hover:text-stone-950 flex items-center justify-center transition"><i data-lucide="facebook" class="w-4 h-4"></i></a>
+          </div>
+        </div>
+
+        <!-- Quick Links (Col 3) -->
+        <div class="md:col-span-3 space-y-3">
+          <h4 class="text-xs font-bold text-white uppercase tracking-wider" data-i18n="footer_quick_links">روابط سريعة</h4>
+          <ul class="space-y-2 text-xs text-stone-400">
+            <li><a href="catalog.html" class="hover:text-[#f7d794] transition">كتالوج الشاي الفاخر</a></li>
+            <li><a href="#bestsellers" class="hover:text-[#f7d794] transition">الأكثر مبيعاً</a></li>
+            <li><a href="#heritage" class="hover:text-[#f7d794] transition">قصة أركان والتراث</a></li>
+            <li><a href="#ceremony" class="hover:text-[#f7d794] transition">دليل التحضير ودرجات الحرارة</a></li>
+          </ul>
+        </div>
+
+        <!-- Boutique & Locations (Col 5) -->
+        <div class="md:col-span-5 space-y-3">
+          <h4 class="text-xs font-bold text-white uppercase tracking-wider" data-i18n="footer_contact">المقر الرئيسي وخدمة النخبة</h4>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs text-stone-400">
+            <div class="p-3 rounded-xl bg-white/5 border border-white/5">
+              <span class="font-bold text-white block mb-1">صالون حي السفارات</span>
+              <span>الرياض، ساحة الفزاري</span>
+              <span class="block text-[11px] text-[#c89b67] mt-1">يومياً: ٧:٠٠ ص - ١١:٠٠ م</span>
+            </div>
+            <div class="p-3 rounded-xl bg-white/5 border border-white/5">
+              <span class="font-bold text-white block mb-1">بوتيك العليا</span>
+              <span>تقاطع التحلية، برج أركان</span>
+              <span class="block text-[11px] text-[#c89b67] mt-1">يومياً: ٨:٠٠ ص - ١٢:٠٠ منتصف الليل</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Copyright & Payments -->
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-stone-500 gap-4">
+        <p data-i18n="footer_rights">جميع الحقوق محفوظة © 2026 دار أركان لخدمات الشاي والقهوة الفاخرة.</p>
+        <div class="flex items-center gap-2">
+          <span class="px-2 py-1 bg-white/5 rounded border border-white/5 text-[10px] text-stone-400">مدى MADA</span>
+          <span class="px-2 py-1 bg-white/5 rounded border border-white/5 text-[10px] text-stone-400">Apple Pay</span>
+          <span class="px-2 py-1 bg-white/5 rounded border border-white/5 text-[10px] text-stone-400">VISA</span>
+          <span class="px-2 py-1 bg-white/5 rounded border border-white/5 text-[10px] text-stone-400">تمارا Tamara</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ================= SLIDE-OVER CART DRAWER ================= -->
+  <div id="cart-drawer-backdrop" onclick="toggleCartDrawer(false)" class="drawer-backdrop fixed inset-0 bg-stone-950/70 z-50 backdrop-blur-sm"></div>
+  <aside id="cart-drawer-panel" class="drawer-panel fixed top-0 bottom-0 start-auto end-0 w-full max-w-md bg-white z-50 shadow-2xl flex flex-col justify-between">
+    <!-- Header -->
+    <div class="p-5 border-b border-stone-200 flex items-center justify-between bg-stone-50">
+      <div class="flex items-center gap-2">
+        <i data-lucide="shopping-bag" class="w-5 h-5 text-[#c89b67]"></i>
+        <h3 class="font-bold text-base text-stone-900" data-i18n="cart_title">سلة المقتنيات الفاخرة</h3>
+      </div>
+      <button onclick="toggleCartDrawer(false)" class="w-8 h-8 rounded-lg bg-stone-200/80 hover:bg-stone-300 flex items-center justify-center text-stone-700 transition">
+        <i data-lucide="x" class="w-4 h-4"></i>
+      </button>
+    </div>
+
+    <!-- Free Shipping Progress -->
+    <div class="px-5 py-3 bg-[#faf8f5] border-b border-stone-100">
+      <div class="flex items-center justify-between text-xs mb-1.5">
+        <span id="cart-shipping-text" class="text-stone-600 font-medium">أضف بـ 53 ر.س للحصول على الشحن المجاني</span>
+        <i data-lucide="truck" class="w-4 h-4 text-[#c89b67]"></i>
+      </div>
+      <div class="w-full h-1.5 rounded-full bg-stone-200 overflow-hidden">
+        <div id="cart-shipping-progress" class="h-full bg-gradient-to-r from-[#c89b67] to-[#8c673b] transition-all duration-300" style="width: 73.5%;"></div>
+      </div>
+    </div>
+
+    <!-- Items List -->
+    <div id="cart-items-list" class="flex-1 overflow-y-auto p-5 divide-y divide-stone-100">
+      <!-- Items dynamically injected by app.js -->
+    </div>
+
+    <!-- Checkout Footer -->
+    <div class="p-5 border-t border-stone-200 bg-stone-50 space-y-3">
+      <!-- Promo Code Box -->
+      <form onsubmit="handlePromoSubmit(event)" class="flex gap-2">
+        <input type="text" id="cart-promo-input" placeholder="كود الخصم (جرب: ARKAN10)" class="flex-1 px-3 py-2 text-xs bg-white border border-stone-200 rounded-xl uppercase tracking-wider focus:outline-none focus:border-[#c89b67]">
+        <button type="submit" class="px-4 py-2 text-xs font-bold bg-[#141a13] text-[#f7d794] rounded-xl hover:bg-[#c89b67] hover:text-stone-900 transition shrink-0">
+          تطبيق
+        </button>
+      </form>
+
+      <div class="flex items-center justify-between text-sm pt-1">
+        <span class="text-stone-500 font-medium" data-i18n="cart_subtotal">المجموع الفرعي:</span>
+        <span id="cart-subtotal-val" class="font-bold text-stone-900 text-base">147 ر.س</span>
+      </div>
+      <p class="text-[11px] text-stone-400">الأسعار تشمل ضريبة القيمة المضافة والشحن المبرد الفاخر.</p>
+      
+      <button onclick="showToast(currentLang === 'ar' ? 'جارٍ تحويلك إلى بوابة الدفع المشفرة والآمنة...' : 'Redirecting to secure encrypted checkout...');" class="w-full py-3.5 rounded-xl bg-[#141a13] hover:bg-[#c89b67] text-[#f7d794] hover:text-stone-950 font-bold text-xs tracking-wider transition shadow-lg flex items-center justify-center gap-2">
+        <i data-lucide="shield-check" class="w-4 h-4"></i>
+        <span data-i18n="cart_checkout">متابعة الشراء الآمن</span>
+      </button>
+    </div>
+  </aside>
+
+  <!-- ================= QUICK VIEW MODAL ================= -->
+  <div id="quick-view-modal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-stone-950/75 backdrop-blur-sm">
+    <div class="relative w-full max-w-2xl bg-white rounded-3xl shadow-2xl overflow-hidden border border-stone-200">
+      <button onclick="closeQuickView()" class="absolute top-4 start-4 z-20 w-8 h-8 rounded-full bg-white/90 shadow flex items-center justify-center text-stone-700 hover:text-black">
+        <i data-lucide="x" class="w-4 h-4"></i>
+      </button>
+      <div id="quick-view-content"></div>
+    </div>
+  </div>
+
+  <!-- ================= SEARCH MODAL ================= -->
+  <div id="search-modal" class="hidden fixed inset-0 z-50 flex items-start justify-center p-4 sm:pt-20 bg-stone-950/75 backdrop-blur-sm">
+    <div class="w-full max-w-lg bg-white rounded-3xl shadow-2xl overflow-hidden border border-stone-200 p-5">
+      <div class="flex items-center gap-3 pb-3 border-b border-stone-100">
+        <i data-lucide="search" class="w-5 h-5 text-[#c89b67]"></i>
+        <input type="text" id="search-input" oninput="handleSearch(this.value)" placeholder="ابحث عن نوع الشاي، النكهة (عسل، ياسمين، ماتشا)..." class="flex-1 text-xs text-stone-900 focus:outline-none">
+        <button onclick="toggleSearchModal(false)" class="text-stone-400 hover:text-stone-700"><i data-lucide="x" class="w-4 h-4"></i></button>
+      </div>
+      <div id="search-results" class="max-h-72 overflow-y-auto mt-3 divide-y divide-stone-50"></div>
+    </div>
+  </div>
+
+  <!-- ================= TOAST CONTAINER ================= -->
+  <div id="toast-container" class="fixed bottom-6 start-6 z-50 flex flex-col gap-2"></div>
+
+  <!-- App Script -->
+  <script src="assets/js/app.js"></script>
+</body>
+</html>

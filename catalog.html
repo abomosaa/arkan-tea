@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>استكشاف الشاي الفاخر والمحاصيل النادرة | أركان ARKAN</title>
+  <meta name="description" content="كتالوج الشاي الكامل لدار أركان: أوراق كاملة، شاي أسود، أبيض، ماتشا أوجي اليابانية، وأعشاب طبيعية للاسترخاء.">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              dark: '#141a13',
+              card: '#1c241b',
+              surface: '#252f24',
+              sand: '#c89b67',
+              sandLight: '#dfb17e',
+              gold: '#e5b869',
+              bgLight: '#faf8f5',
+              bgCard: '#f3efe9'
+            }
+          },
+          fontFamily: {
+            serif: ['Playfair Display', 'Readex Pro', 'serif'],
+            sans: ['Readex Pro', 'Plus Jakarta Sans', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='25' fill='%23141a13'/><path d='M50 20 C65 35 75 55 70 75 C55 80 35 70 30 50 C25 35 40 25 50 20 Z' fill='%23c89b67'/><circle cx='50' cy='50' r='6' fill='%23f7d794'/></svg>">
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body class="bg-[#faf8f5] text-[#181d17] antialiased selection:bg-[#c89b67] selection:text-white">
+
+  <!-- ================= TOP ANNOUNCEMENT BAR ================= -->
+  <div class="bg-[#141a13] text-[#f7d794] text-xs py-2 px-4 border-b border-[#c89b67]/20">
+    <div class="max-w-7xl mx-auto flex items-center justify-between">
+      <div class="flex items-center gap-2">
+        <span class="w-1.5 h-1.5 rounded-full bg-[#e5b869] animate-pulse"></span>
+        <span class="text-[11px] font-medium tracking-wide">شحن مجاني لكافة طلبات النخبة فوق 200 ر.س لجميع مدن المملكة</span>
+      </div>
+      <div class="hidden sm:flex items-center gap-4 text-[11px] text-stone-300">
+        <span>الرياض • حي السفارات & العليا</span>
+        <span class="text-[#c89b67]/40">|</span>
+        <a href="tel:920000000" class="hover:text-[#f7d794] transition">خدمة النخبة: 920000000</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= NAVIGATION BAR ================= -->
+  <header class="sticky top-0 z-40 glass-nav transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      
+      <!-- Logo & Brand Badge -->
+      <a href="index.html" class="flex items-center gap-3 group">
+        <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-[#c89b67] to-[#8c673b] p-0.5 shadow-md flex items-center justify-center">
+          <div class="w-full h-full bg-[#141a13] rounded-[10px] flex items-center justify-center">
+            <span class="font-serif font-black text-xl text-[#f7d794] group-hover:scale-110 transition-transform">أ</span>
+          </div>
+        </div>
+        <div>
+          <span class="text-xl font-bold tracking-wider text-white flex items-center gap-1.5" data-i18n="brand_name">
+            أركان
+            <span class="text-[10px] tracking-widest text-[#c89b67] font-sans uppercase font-medium">ARKAN</span>
+          </span>
+          <span class="text-[10px] text-stone-400 block tracking-widest uppercase font-light" data-i18n="brand_sub">شاي وقهوة مختصة</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav class="hidden lg:flex items-center gap-8 text-sm font-medium text-stone-200">
+        <a href="index.html" class="hover:text-[#f7d794] transition-colors pb-1" data-i18n="nav_home">الرئيسية</a>
+        <a href="catalog.html" class="text-[#f7d794] border-b border-[#c89b67] pb-1" data-i18n="nav_catalog">استكشاف الشاي</a>
+        <a href="index.html#heritage" class="hover:text-[#f7d794] transition-colors pb-1" data-i18n="nav_story">قصتنا وتراثنا</a>
+        <a href="index.html#bestsellers" class="hover:text-[#f7d794] transition-colors pb-1" data-i18n="nav_bestsellers">الأكثر مبيعاً</a>
+        <a href="index.html#ceremony" class="hover:text-[#f7d794] transition-colors pb-1" data-i18n="nav_ceremony">طقوس التحضير</a>
+      </nav>
+
+      <!-- Action Icons (Lang, Search, Cart) -->
+      <div class="flex items-center gap-2 sm:gap-3">
+        <button onclick="setLanguage(currentLang === 'ar' ? 'en' : 'ar')" class="px-2.5 py-1 text-xs font-semibold text-stone-200 bg-white/5 hover:bg-white/10 border border-white/10 rounded-lg transition flex items-center gap-1">
+          <i data-lucide="globe" class="w-3.5 h-3.5 text-[#c89b67]"></i>
+          <span id="lang-toggle-text">EN</span>
+        </button>
+
+        <button onclick="toggleSearchModal(true)" class="w-9 h-9 rounded-lg bg-white/5 hover:bg-white/10 border border-white/10 flex items-center justify-center text-stone-200 hover:text-white transition">
+          <i data-lucide="search" class="w-4 h-4"></i>
+        </button>
+
+        <button onclick="toggleCartDrawer(true)" class="relative px-3.5 py-2 rounded-xl bg-[#c89b67] hover:bg-[#dfb17e] text-stone-950 font-semibold text-xs transition flex items-center gap-2 shadow-md">
+          <i data-lucide="shopping-bag" class="w-4 h-4"></i>
+          <span class="hidden sm:inline" data-i18n="cart_title">السلة</span>
+          <span class="cart-count-badge w-5 h-5 rounded-full bg-[#141a13] text-[#f7d794] text-[10px] font-bold flex items-center justify-center">2</span>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- ================= EDITORIAL HERO BANNER ================= -->
+  <!-- Recreating and modernizing the top banner from the 2nd image uploaded -->
+  <section class="relative bg-[#141a13] text-white py-16 overflow-hidden">
+    <div class="absolute inset-0 opacity-20">
+      <img src="https://images.unsplash.com/photo-1544787219-7f47ccb76574?auto=format&fit=crop&w=1600&q=80" alt="" class="w-full h-full object-cover">
+    </div>
+    <div class="absolute inset-0 bg-gradient-to-r from-[#141a13] via-[#141a13]/85 to-transparent"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="max-w-2xl space-y-4">
+        <span class="px-3 py-1 rounded-full bg-[#c89b67]/20 text-[#f7d794] text-xs border border-[#c89b67]/30 font-medium">
+          مجموعات الحصاد الحرفي 2026
+        </span>
+        <h1 class="text-3xl sm:text-5xl font-bold font-serif leading-tight">
+          تشكيلة الشاي والأعشاب الطبيعية
+        </h1>
+        <p class="text-stone-300 text-sm sm:text-base font-light leading-relaxed">
+          انغمس في تشكيلة نقية من أوراق الشاي المقطوفة يدوياً والأعشاب الطبية الفاخرة لتعزيز الهدوء الذهني والصفاء الداخلي.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CIRCULAR CATEGORY EXPLORER ================= -->
+  <!-- Recreating the circular badges in image 2 with high aesthetic appeal -->
+  <section class="py-10 bg-white border-b border-stone-200/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-6">
+        <span class="text-xs font-semibold text-[#c89b67] uppercase tracking-widest block mb-1">استكشف حسب الصنف</span>
+        <h2 class="text-lg font-bold font-serif text-stone-900">أصناف الشاي ومصادر الأوراق</h2>
+      </div>
+
+      <!-- Horizontal scrolling circular pills -->
+      <div class="flex items-center justify-start lg:justify-center gap-6 overflow-x-auto pb-4 pt-2 no-scrollbar">
+        
+        <!-- All -->
+        <button onclick="setCategoryFilter('all')" class="group flex flex-col items-center gap-2 shrink-0 cursor-pointer">
+          <div class="w-16 h-16 rounded-full bg-[#141a13] p-1 border-2 border-[#c89b67] shadow-md group-hover:scale-105 transition">
+            <div class="w-full h-full rounded-full bg-stone-900 flex items-center justify-center text-[#f7d794] font-bold text-xs">
+              الكل
+            </div>
+          </div>
+          <span class="text-xs font-semibold text-stone-800 group-hover:text-[#c89b67] transition">كافة الأصناف</span>
+        </button>
+
+        <!-- Black Tea -->
+        <button onclick="setCategoryFilter('black')" class="group flex flex-col items-center gap-2 shrink-0 cursor-pointer">
+          <div class="w-16 h-16 rounded-full overflow-hidden p-0.5 border-2 border-transparent group-hover:border-[#c89b67] shadow-sm transition">
+            <img src="https://images.unsplash.com/photo-1594631252845-29fc4cc8cde9?auto=format&fit=crop&w=200&q=80" class="w-full h-full object-cover rounded-full" alt="">
+          </div>
+          <span class="text-xs font-medium text-stone-600 group-hover:text-stone-900 transition">شاي أسود ملكي</span>
+        </button>
+
+        <!-- Green / Matcha -->
+        <button onclick="setCategoryFilter('green')" class="group flex flex-col items-center gap-2 shrink-0 cursor-pointer">
+          <div class="w-16 h-16 rounded-full overflow-hidden p-0.5 border-2 border-transparent group-hover:border-[#c89b67] shadow-sm transition">
+            <img src="https://images.unsplash.com/photo-1536256263959-770b48d82b0a?auto=format&fit=crop&w=200&q=80" class="w-full h-full object-cover rounded-full" alt="">
+          </div>
+          <span class="text-xs font-medium text-stone-600 group-hover:text-stone-900 transition">ماتشا وأخضر</span>
+        </button>
+
+        <!-- White Tea -->
+        <button onclick="setCategoryFilter('white')" class="group flex flex-col items-center gap-2 shrink-0 cursor-pointer">
+          <div class="w-16 h-16 rounded-full overflow-hidden p-0.5 border-2 border-transparent group-hover:border-[#c89b67] shadow-sm transition">
+            <img src="https://images.unsplash.com/photo-1597481499750-3e6b22637e12?auto=format&fit=crop&w=200&q=80" class="w-full h-full object-cover rounded-full" alt="">
+          </div>
+          <span class="text-xs font-medium text-stone-600 group-hover:text-stone-900 transition">شاي أبيض فضي</span>
+        </button>
+
+        <!-- Herbal Infusion -->
+        <button onclick="setCategoryFilter('herbal')" class="group flex flex-col items-center gap-2 shrink-0 cursor-pointer">
+          <div class="w-16 h-16 rounded-full overflow-hidden p-0.5 border-2 border-transparent group-hover:border-[#c89b67] shadow-sm transition">
+            <img src="https://images.unsplash.com/photo-1544787219-7f47ccb76574?auto=format&fit=crop&w=200&q=80" class="w-full h-full object-cover rounded-full" alt="">
+          </div>
+          <span class="text-xs font-medium text-stone-600 group-hover:text-stone-900 transition">أعشاب وبابونج</span>
+        </button>
+
+        <!-- Oolong Tea -->
+        <button onclick="setCategoryFilter('oolong')" class="group flex flex-col items-center gap-2 shrink-0 cursor-pointer">
+          <div class="w-16 h-16 rounded-full overflow-hidden p-0.5 border-2 border-transparent group-hover:border-[#c89b67] shadow-sm transition">
+            <img src="https://images.unsplash.com/photo-1564890369478-c89ca6d9cde9?auto=format&fit=crop&w=200&q=80" class="w-full h-full object-cover rounded-full" alt="">
+          </div>
+          <span class="text-xs font-medium text-stone-600 group-hover:text-stone-900 transition">أولونغ صخري</span>
+        </button>
+
+        <!-- Teaware -->
+        <button onclick="setCategoryFilter('teaware')" class="group flex flex-col items-center gap-2 shrink-0 cursor-pointer">
+          <div class="w-16 h-16 rounded-full overflow-hidden p-0.5 border-2 border-transparent group-hover:border-[#c89b67] shadow-sm transition">
+            <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=200&q=80" class="w-full h-full object-cover rounded-full" alt="">
+          </div>
+          <span class="text-xs font-medium text-stone-600 group-hover:text-stone-900 transition">أدوات وأكواب</span>
+        </button>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CATALOG GRID WITH FILTERS & SORTING ================= -->
+  <main class="py-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- Controls Header with Integrated Mood Sommelier -->
+    <div class="mb-8 space-y-4">
+      
+      <!-- Mood Sommelier Quick Filter in Catalog -->
+      <div class="p-4 sm:p-5 rounded-2xl bg-[#141a13] text-white border border-[#c89b67]/30 shadow-md flex flex-col md:flex-row md:items-center justify-between gap-3">
+        <div class="flex items-center gap-2.5">
+          <span class="w-8 h-8 rounded-xl bg-[#c89b67]/20 flex items-center justify-center text-[#f7d794]">
+            <i data-lucide="sparkles" class="w-4 h-4"></i>
+          </span>
+          <div>
+            <span class="text-xs font-bold text-white block">مساعد الذوق التفاعلي:</span>
+            <span class="text-[11px] text-stone-300">اختر المزاج المنشود لتصفية الأوراق مباشرة:</span>
+          </div>
+        </div>
+
+        <div class="flex flex-wrap gap-2">
+          <button onclick="filterByMood('relax')" data-mood="relax" class="mood-pill px-3.5 py-1.5 rounded-xl font-semibold text-xs transition flex items-center gap-1.5 shadow-sm">
+            <span>🌿</span>
+            <span>استرخاء وسكينة</span>
+          </button>
+          <button onclick="filterByMood('focus')" data-mood="focus" class="mood-pill px-3.5 py-1.5 rounded-xl font-semibold text-xs transition flex items-center gap-1.5 shadow-sm">
+            <span>☕</span>
+            <span>صفاء وتركيز</span>
+          </button>
+          <button onclick="filterByMood('energize')" data-mood="energize" class="mood-pill px-3.5 py-1.5 rounded-xl font-semibold text-xs transition flex items-center gap-1.5 shadow-sm">
+            <span>⚡</span>
+            <span>طاقة وانتعاش</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Controls Bar -->
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between pb-4 border-b border-stone-200/80 gap-4">
+        <div>
+          <h3 class="text-base font-bold text-stone-900">كافة المنتجات المتاحة</h3>
+          <p class="text-xs text-stone-400">عرض أحدث المحاصيل الجبلية والأدوات الحرفية</p>
+        </div>
+
+        <div class="flex items-center gap-3">
+          <label for="sort-select" class="text-xs text-stone-500">الترتيب حسب:</label>
+          <select id="sort-select" onchange="sortCatalog(this.value)" class="text-xs font-medium bg-white border border-stone-200 rounded-xl px-3 py-2 text-stone-800 focus:outline-none focus:border-[#c89b67]">
+            <option value="featured">الموصى به (تلقائي)</option>
+            <option value="price-asc">السعر: من الأقل للأعلى</option>
+            <option value="price-desc">السعر: من الأعلى للأقل</option>
+            <option value="rating">الأعلى تقييماً ★</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Active Filter Banner Element -->
+      <div class="active-filter-banner-el hidden p-3.5 rounded-2xl bg-[#141a13] text-[#f7d794] border border-[#c89b67]/40 shadow-md">
+        <!-- Injected dynamically -->
+      </div>
+    </div>
+
+    <!-- Product Grid -->
+    <div id="catalog-products-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <!-- Injected by catalog init script -->
+    </div>
+
+  </main>
+
+  <!-- ================= VIP NEWSLETTER SECTION ================= -->
+  <section class="py-16 bg-gradient-to-r from-[#c89b67] via-[#dfb17e] to-[#c89b67] text-stone-950">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <span class="text-xs font-bold tracking-widest uppercase text-stone-900/80 block mb-2" data-i18n="newsletter_sub">نادي أركان الخاص</span>
+      <h2 class="text-2xl sm:text-3xl font-bold font-serif mb-4" data-i18n="newsletter_title">انضم إلى مجتمع الذواقة واحصل على دعوات حصرية لندرات المحاصيل</h2>
+      
+      <form onsubmit="handleNewsletter(event)" class="max-w-md mx-auto flex flex-col sm:flex-row gap-2 mt-6">
+        <input type="email" id="newsletter-email" required placeholder="أدخل بريدك الإلكتروني هنا..." data-i18n-placeholder="newsletter_placeholder" class="flex-1 px-5 py-3 rounded-xl bg-white/95 text-stone-900 text-xs placeholder:text-stone-400 focus:outline-none focus:ring-2 focus:ring-[#141a13] shadow-inner">
+        <button type="submit" class="px-6 py-3 rounded-xl bg-[#141a13] hover:bg-stone-900 text-[#f7d794] text-xs font-bold transition shadow-md whitespace-nowrap" data-i18n="newsletter_btn">
+          انضمام حصري
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <!-- ================= COMPREHENSIVE FOOTER ================= -->
+  <footer class="bg-[#141a13] text-stone-300 pt-16 pb-12 border-t border-[#c89b67]/20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-10 pb-12 border-b border-white/10">
+        <div class="md:col-span-4 space-y-4">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-[#c89b67] flex items-center justify-center font-serif font-black text-stone-950 text-lg">أ</div>
+            <span class="text-xl font-bold text-white tracking-wider">أركان <span class="text-xs text-[#c89b67]">ARKAN</span></span>
+          </div>
+          <p class="text-xs text-stone-400 leading-relaxed" data-i18n="footer_desc">
+            دار أركان للشاي والقهوة المختصة. نحتفي بأصالة الضيافة العربية عبر أفخر محاصيل الشاي الحرفية في العالم.
+          </p>
+        </div>
+
+        <div class="md:col-span-3 space-y-3">
+          <h4 class="text-xs font-bold text-white uppercase tracking-wider" data-i18n="footer_quick_links">روابط سريعة</h4>
+          <ul class="space-y-2 text-xs text-stone-400">
+            <li><a href="catalog.html" class="hover:text-[#f7d794] transition">كتالوج الشاي الفاخر</a></li>
+            <li><a href="index.html#bestsellers" class="hover:text-[#f7d794] transition">الأكثر مبيعاً</a></li>
+            <li><a href="index.html#heritage" class="hover:text-[#f7d794] transition">قصة أركان والتراث</a></li>
+          </ul>
+        </div>
+
+        <div class="md:col-span-5 space-y-3">
+          <h4 class="text-xs font-bold text-white uppercase tracking-wider" data-i18n="footer_contact">المقر الرئيسي وخدمة النخبة</h4>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs text-stone-400">
+            <div class="p-3 rounded-xl bg-white/5 border border-white/5">
+              <span class="font-bold text-white block mb-1">صالون حي السفارات</span>
+              <span>الرياض، ساحة الفزاري</span>
+            </div>
+            <div class="p-3 rounded-xl bg-white/5 border border-white/5">
+              <span class="font-bold text-white block mb-1">بوتيك العليا</span>
+              <span>تقاطع التحلية، برج أركان</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-stone-500 gap-4">
+        <p data-i18n="footer_rights">جميع الحقوق محفوظة © 2026 دار أركان لخدمات الشاي والقهوة الفاخرة.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ================= SLIDE-OVER CART DRAWER ================= -->
+  <div id="cart-drawer-backdrop" onclick="toggleCartDrawer(false)" class="drawer-backdrop fixed inset-0 bg-stone-950/70 z-50 backdrop-blur-sm"></div>
+  <aside id="cart-drawer-panel" class="drawer-panel fixed top-0 bottom-0 start-auto end-0 w-full max-w-md bg-white z-50 shadow-2xl flex flex-col justify-between">
+    <div class="p-5 border-b border-stone-200 flex items-center justify-between bg-stone-50">
+      <div class="flex items-center gap-2">
+        <i data-lucide="shopping-bag" class="w-5 h-5 text-[#c89b67]"></i>
+        <h3 class="font-bold text-base text-stone-900" data-i18n="cart_title">سلة المقتنيات الفاخرة</h3>
+      </div>
+      <button onclick="toggleCartDrawer(false)" class="w-8 h-8 rounded-lg bg-stone-200/80 hover:bg-stone-300 flex items-center justify-center text-stone-700 transition">
+        <i data-lucide="x" class="w-4 h-4"></i>
+      </button>
+    </div>
+
+    <div class="px-5 py-3 bg-[#faf8f5] border-b border-stone-100">
+      <div class="flex items-center justify-between text-xs mb-1.5">
+        <span id="cart-shipping-text" class="text-stone-600 font-medium">أضف بـ 53 ر.س للحصول على الشحن المجاني</span>
+        <i data-lucide="truck" class="w-4 h-4 text-[#c89b67]"></i>
+      </div>
+      <div class="w-full h-1.5 rounded-full bg-stone-200 overflow-hidden">
+        <div id="cart-shipping-progress" class="h-full bg-gradient-to-r from-[#c89b67] to-[#8c673b] transition-all duration-300" style="width: 73.5%;"></div>
+      </div>
+    </div>
+
+    <div id="cart-items-list" class="flex-1 overflow-y-auto p-5 divide-y divide-stone-100"></div>
+
+    <div class="p-5 border-t border-stone-200 bg-stone-50 space-y-3">
+      <!-- Promo Code Box -->
+      <form onsubmit="handlePromoSubmit(event)" class="flex gap-2">
+        <input type="text" id="cart-promo-input" placeholder="كود الخصم (جرب: ARKAN10)" class="flex-1 px-3 py-2 text-xs bg-white border border-stone-200 rounded-xl uppercase tracking-wider focus:outline-none focus:border-[#c89b67]">
+        <button type="submit" class="px-4 py-2 text-xs font-bold bg-[#141a13] text-[#f7d794] rounded-xl hover:bg-[#c89b67] hover:text-stone-900 transition shrink-0">
+          تطبيق
+        </button>
+      </form>
+
+      <div class="flex items-center justify-between text-sm pt-1">
+        <span class="text-stone-500 font-medium" data-i18n="cart_subtotal">المجموع الفرعي:</span>
+        <span id="cart-subtotal-val" class="font-bold text-stone-900 text-base">147 ر.س</span>
+      </div>
+      <button onclick="showToast(currentLang === 'ar' ? 'جارٍ تحويلك إلى بوابة الدفع المشفرة والآمنة...' : 'Redirecting to secure encrypted checkout...');" class="w-full py-3.5 rounded-xl bg-[#141a13] hover:bg-[#c89b67] text-[#f7d794] hover:text-stone-950 font-bold text-xs tracking-wider transition shadow-lg flex items-center justify-center gap-2">
+        <i data-lucide="shield-check" class="w-4 h-4"></i>
+        <span data-i18n="cart_checkout">متابعة الشراء الآمن</span>
+      </button>
+    </div>
+  </aside>
+
+  <!-- ================= QUICK VIEW MODAL ================= -->
+  <div id="quick-view-modal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-stone-950/75 backdrop-blur-sm">
+    <div class="relative w-full max-w-2xl bg-white rounded-3xl shadow-2xl overflow-hidden border border-stone-200">
+      <button onclick="closeQuickView()" class="absolute top-4 start-4 z-20 w-8 h-8 rounded-full bg-white/90 shadow flex items-center justify-center text-stone-700 hover:text-black">
+        <i data-lucide="x" class="w-4 h-4"></i>
+      </button>
+      <div id="quick-view-content"></div>
+    </div>
+  </div>
+
+  <!-- ================= SEARCH MODAL ================= -->
+  <div id="search-modal" class="hidden fixed inset-0 z-50 flex items-start justify-center p-4 sm:pt-20 bg-stone-950/75 backdrop-blur-sm">
+    <div class="w-full max-w-lg bg-white rounded-3xl shadow-2xl overflow-hidden border border-stone-200 p-5">
+      <div class="flex items-center gap-3 pb-3 border-b border-stone-100">
+        <i data-lucide="search" class="w-5 h-5 text-[#c89b67]"></i>
+        <input type="text" id="search-input" oninput="handleSearch(this.value)" placeholder="ابحث عن نوع الشاي، النكهة..." class="flex-1 text-xs text-stone-900 focus:outline-none">
+        <button onclick="toggleSearchModal(false)" class="text-stone-400 hover:text-stone-700"><i data-lucide="x" class="w-4 h-4"></i></button>
+      </div>
+      <div id="search-results" class="max-h-72 overflow-y-auto mt-3 divide-y divide-stone-50"></div>
+    </div>
+  </div>
+
+  <!-- ================= TOAST CONTAINER ================= -->
+  <div id="toast-container" class="fixed bottom-6 start-6 z-50 flex flex-col gap-2"></div>
+
+  <!-- App Script -->
+  <script src="assets/js/app.js"></script>
+  <script>
+    // Catalog specific initialization
+    document.addEventListener('DOMContentLoaded', () => {
+      // Check query param
+      const urlParams = new URLSearchParams(window.location.search);
+      const catParam = urlParams.get('category');
+      if (catParam) {
+        setCategoryFilter(catParam);
+      } else {
+        renderProducts('catalog-products-grid');
+      }
+    });
+
+    function sortCatalog(criteria) {
+      let sorted = [...getFilteredProducts()];
+      if (criteria === 'price-asc') {
+        sorted.sort((a, b) => a.price - b.price);
+      } else if (criteria === 'price-desc') {
+        sorted.sort((a, b) => b.price - a.price);
+      } else if (criteria === 'rating') {
+        sorted.sort((a, b) => b.rating - a.rating);
+      }
+      renderProducts('catalog-products-grid', sorted);
+    }
+  </script>
+</body>
+</html>
