@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>الصفحة غير موجودة 404 | دار أركان ARKAN</title>
+  <meta name="theme-color" content="#141a13">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='25' fill='%23141a13'/><path d='M50 20 C65 35 75 55 70 75 C55 80 35 70 30 50 C25 35 40 25 50 20 Z' fill='%23c89b67'/><circle cx='50' cy='50' r='6' fill='%23f7d794'/></svg>">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Readex+Pro:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@0.460.0"></script>
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body class="bg-[#141a13] text-white antialiased min-h-screen flex flex-col justify-between selection:bg-[#c89b67] selection:text-stone-950">
+
+  <!-- Header -->
+  <header class="py-6 border-b border-[#c89b67]/20">
+    <div class="max-w-7xl mx-auto px-4 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-xl bg-[#c89b67] flex items-center justify-center font-serif font-black text-stone-950 text-lg shadow-md">أ</div>
+        <span class="text-lg font-bold text-white tracking-wider">أركان <span class="text-xs text-[#c89b67]">ARKAN</span></span>
+      </a>
+      <a href="index.html" class="px-4 py-2 text-xs font-medium text-stone-300 hover:text-white bg-white/5 hover:bg-white/10 rounded-xl transition flex items-center gap-1.5 border border-white/10">
+        <i data-lucide="arrow-right" class="w-3.5 h-3.5 rtl:rotate-0 ltr:rotate-180"></i>
+        <span>العودة للرئيسية</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- 404 Hero -->
+  <main class="max-w-xl mx-auto px-4 py-16 text-center space-y-6 flex-1 flex flex-col justify-center">
+    <div class="relative">
+      <span class="text-8xl sm:text-9xl font-serif font-bold text-[#c89b67]/20 select-none block">404</span>
+      <div class="absolute inset-0 flex items-center justify-center">
+        <span class="text-xl sm:text-2xl font-serif font-bold text-[#f7d794]">يبدو أنك ضللت الطريق في مزارع الشاي</span>
+      </div>
+    </div>
+
+    <p class="text-xs sm:text-sm text-stone-300 leading-relaxed max-w-md mx-auto">
+      الصفحة التي تبحث عنها ربما تم نقلها أو لم تعد متوفرة. ندعوك للعودة إلى صالون الشاي الرئيسي واستكشاف أحدث المحاصيل الحرفية.
+    </p>
+
+    <div class="pt-4 flex flex-col sm:flex-row items-center justify-center gap-3">
+      <a href="index.html" class="w-full sm:w-auto px-6 py-3 rounded-xl bg-[#c89b67] hover:bg-[#dfb17e] text-stone-950 font-bold text-xs transition shadow-lg flex items-center justify-center gap-2">
+        <i data-lucide="home" class="w-4 h-4"></i>
+        <span>الصفحة الرئيسية</span>
+      </a>
+      <a href="catalog.html" class="w-full sm:w-auto px-6 py-3 rounded-xl bg-white/5 hover:bg-white/10 text-stone-200 border border-white/10 font-medium text-xs transition flex items-center justify-center gap-2">
+        <i data-lucide="compass" class="w-4 h-4 text-[#c89b67]"></i>
+        <span>استكشاف الكتالوج</span>
+      </a>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="py-6 border-t border-white/10 text-center text-xs text-stone-500">
+    <p>جميع الحقوق محفوظة © 2026 دار أركان لخدمات الشاي والقهوة الفاخرة.</p>
+  </footer>
+
+  <script>lucide.createIcons();</script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+{
+  "name": "أركان | ARKAN Specialty Tea & Roastery",
+  "short_name": "أركان | ARKAN",
+  "description": "دار أركان للشاي والقهوة المختصة بروح الأصالة والمعاصرة",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "#141a13",
+  "theme_color": "#141a13",
+  "lang": "ar",
+  "dir": "rtl",
+  "icons": [
+    {
+      "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 192 192'><rect width='192' height='192' rx='48' fill='%23141a13'/><path d='M96 38 C125 67 144 105 134 144 C105 153 67 134 57 96 C48 67 77 48 96 38 Z' fill='%23c89b67'/><circle cx='96' cy='96' r='12' fill='%23f7d794'/></svg>",
+      "sizes": "192x192",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'><rect width='512' height='512' rx='128' fill='%23141a13'/><path d='M256 100 C333 179 384 280 357 384 C280 408 179 357 152 256 C128 179 205 128 256 100 Z' fill='%23c89b67'/><circle cx='256' cy='256' r='32' fill='%23f7d794'/></svg>",
+      "sizes": "512x512",
+      "type": "image/svg+xml"
+    }
+  ]
+}

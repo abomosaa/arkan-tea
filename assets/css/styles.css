@@ -1,6 +1,6 @@
 /* ARKAN | أركان - Luxury Specialty Tea & Roastery UI Styles */
 
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Readex+Pro:wght@200;300;400;500;600;700&display=swap');
+/* Google Fonts loaded via <link> in HTML for better performance */
 
 :root {
   --color-forest-dark: #141a13;
@@ -77,10 +77,10 @@ body {
 /* Luxury Product Card Effects */
 .luxury-card {
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-  will-change: transform, box-shadow;
 }
 
 .luxury-card:hover {
+  will-change: transform, box-shadow;
   transform: translateY(-6px);
   box-shadow: 0 20px 35px -10px rgba(20, 26, 19, 0.12), 0 0 20px rgba(200, 155, 103, 0.1);
 }
@@ -125,6 +125,15 @@ body {
 
 ::-webkit-scrollbar-thumb:hover {
   background: #c89b67;
+}
+
+/* Hide scrollbar utility */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 /* Badges & Tags */
@@ -248,4 +257,24 @@ body {
 /* Active Filter Banner Highlight */
 #active-filter-banner {
   transition: all 0.3s ease;
+}
+
+/* Accessibility - Focus Ring */
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible {
+  outline: 2px solid #c89b67;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

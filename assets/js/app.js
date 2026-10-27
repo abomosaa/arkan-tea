@@ -225,10 +225,7 @@ const PRODUCTS = [
 
 // App State
 let currentLang = localStorage.getItem('arkan_lang') || 'ar';
-let cart = JSON.parse(localStorage.getItem('arkan_cart')) || [
-  { id: 1, quantity: 1 },
-  { id: 5, quantity: 2 }
-];
+let cart = JSON.parse(localStorage.getItem('arkan_cart')) || [];
 let wishlist = JSON.parse(localStorage.getItem('arkan_wishlist')) || [2];
 let currentFilterType = 'category'; // 'category' | 'mood'
 let activeFilterValue = 'all';
@@ -274,7 +271,7 @@ function applyLanguageTranslations() {
   elements.forEach(el => {
     const key = el.getAttribute('data-i18n');
     if (TRANSLATIONS[currentLang] && TRANSLATIONS[currentLang][key]) {
-      el.innerHTML = TRANSLATIONS[currentLang][key];
+      el.textContent = TRANSLATIONS[currentLang][key];
     }
   });
 
@@ -360,7 +357,28 @@ const TRANSLATIONS = {
     footer_quick_links: "روابط سريعة",
     footer_experience: "تجربة أركان",
     footer_contact: "المقر الرئيسي وخدمة النخبة",
-    footer_rights: "جميع الحقوق محفوظة © 2026 دار أركان لخدمات الشاي والقهوة الفاخرة."
+    footer_rights: "جميع الحقوق محفوظة © 2026 دار أركان لخدمات الشاي والقهوة الفاخرة.",
+    catalog_badge: "مجموعات الحصاد الحرفي 2026",
+    catalog_hero_title: "تشكيلة الشاي والأعشاب الطبيعية",
+    catalog_hero_desc: "انغمس في تشكيلة نقية من أوراق الشاي المقطوفة يدوياً والأعشاب الطبية الفاخرة لتعزيز الهدوء الذهني والصفاء الداخلي.",
+    catalog_explore_sub: "استكشف حسب الصنف",
+    catalog_explore_title: "أصناف الشاي ومصادر الأوراق",
+    cat_pill_all: "كافة الأصناف",
+    cat_pill_black: "شاي أسود ملكي",
+    cat_pill_green: "ماتشا وأخضر",
+    cat_pill_white: "شاي أبيض فضي",
+    cat_pill_herbal: "أعشاب وبابونج",
+    cat_pill_oolong: "أولونغ صخري",
+    cat_pill_teaware: "أدوات وأكواب",
+    catalog_all_available: "كافة المنتجات المتاحة",
+    catalog_subtitle: "عرض أحدث المحاصيل الجبلية والأدوات الحرفية",
+    sort_label: "الترتيب حسب:",
+    sort_featured: "الموصى به (تلقائي)",
+    sort_price_asc: "السعر: من الأقل للأعلى",
+    sort_price_desc: "السعر: من الأعلى للأقل",
+    sort_rating: "الأعلى تقييماً ★",
+    sommelier_title: "مساعد الذوق التفاعلي:",
+    sommelier_desc: "اختر المزاج المنشود لتصفية الأوراق مباشرة:"
   },
   en: {
     brand_name: "ARKAN",
@@ -427,9 +445,41 @@ const TRANSLATIONS = {
     footer_quick_links: "Navigation",
     footer_experience: "The Experience",
     footer_contact: "Boutique & Concierge",
-    footer_rights: "All Rights Reserved © 2026 ARKAN House of Fine Teas."
+    footer_rights: "All Rights Reserved © 2026 ARKAN House of Fine Teas.",
+    catalog_badge: "Artisanal Harvest Lots 2026",
+    catalog_hero_title: "Natural Teas & Botanical Reserve",
+    catalog_hero_desc: "Immerse in pure hand-harvested tea leaves and wellness botanicals crafted for mindful calm.",
+    catalog_explore_sub: "Explore By Variety",
+    catalog_explore_title: "Tea Varieties & Mountain Terroirs",
+    cat_pill_all: "All Reserves",
+    cat_pill_black: "Royal Black Tea",
+    cat_pill_green: "Uji Matcha & Green",
+    cat_pill_white: "Imperial White Tea",
+    cat_pill_herbal: "Herbal & Chamomile",
+    cat_pill_oolong: "Rock Wuyi Oolong",
+    cat_pill_teaware: "Artisan Teaware",
+    catalog_all_available: "All Available Curations",
+    catalog_subtitle: "Showcasing single estate lots & ceremonial accessories",
+    sort_label: "Sort By:",
+    sort_featured: "Featured (Default)",
+    sort_price_asc: "Price: Low to High",
+    sort_price_desc: "Price: High to Low",
+    sort_rating: "Highest Rated ★",
+    sommelier_title: "Sensory Sommelier:",
+    sommelier_desc: "Select your desired mood to filter leaves directly:"
   }
 };
+
+// Security Helper: HTML Entity Escaping
+function escapeHtml(str) {
+  if (str === null || str === undefined) return '';
+  return String(str)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#039;');
+}
 
 // Filter Helpers
 function getFilteredProducts() {
@@ -677,7 +727,7 @@ function resetFilters() {
 function addToCart(productId, qty = 1) {
   const existing = cart.find(item => item.id === productId);
   if (existing) {
-    existing.quantity += qty;
+    existing.quantity = Math.min(existing.quantity + qty, 10);
   } else {
     cart.push({ id: productId, quantity: qty });
   }
@@ -694,7 +744,7 @@ function updateCartQuantity(productId, delta) {
   const item = cart.find(i => i.id === productId);
   if (!item) return;
 
-  item.quantity += delta;
+  item.quantity = Math.min(item.quantity + delta, 10);
   if (item.quantity <= 0) {
     cart = cart.filter(i => i.id !== productId);
   }
@@ -788,7 +838,7 @@ function updateCartUI() {
         <div class="flex flex-col items-end">
           <span class="text-xs text-emerald-600 line-through text-stone-400">${subtotal} ${isAr ? 'ر.س' : 'SAR'}</span>
           <span class="text-base font-bold text-stone-900">${finalTotal} ${isAr ? 'ر.س' : 'SAR'}</span>
-          <span class="text-[10px] text-emerald-600 font-semibold">(تم تطبيق خصم 10% كود ${appliedPromo})</span>
+          <span class="text-[10px] text-emerald-600 font-semibold">${currentLang === 'ar' ? `(تم تطبيق خصم 10% كود ${appliedPromo})` : `(10% discount applied - code: ${appliedPromo})`}</span>
         </div>
       `;
     } else {
@@ -837,6 +887,27 @@ function applyPromoCode(code) {
   }
 }
 
+// Helper: Manage page scroll lock across all drawers & modals
+function updateBodyScrollLock() {
+  const isCartActive = document.getElementById('cart-drawer-panel')?.classList.contains('active');
+  const isQuickViewActive = !document.getElementById('quick-view-modal')?.classList.contains('hidden');
+  const isSearchActive = !document.getElementById('search-modal')?.classList.contains('hidden');
+  if (isCartActive || isQuickViewActive || isSearchActive) {
+    document.body.style.overflow = 'hidden';
+  } else {
+    document.body.style.overflow = '';
+  }
+}
+
+// Proceed to Real Checkout
+function proceedToCheckout() {
+  if (cart.length === 0) {
+    showToast(currentLang === 'ar' ? 'سلة المقتنيات فارغة حالياً!' : 'Your cart is empty!');
+    return;
+  }
+  window.location.href = 'checkout.html';
+}
+
 // Drawer Controls
 function toggleCartDrawer(open) {
   const backdrop = document.getElementById('cart-drawer-backdrop');
@@ -846,12 +917,11 @@ function toggleCartDrawer(open) {
   if (open) {
     backdrop.classList.add('active');
     panel.classList.add('active');
-    document.body.style.overflow = 'hidden';
   } else {
     backdrop.classList.remove('active');
     panel.classList.remove('active');
-    document.body.style.overflow = '';
   }
+  updateBodyScrollLock();
 }
 
 // Quick View Modal
@@ -931,7 +1001,7 @@ function openQuickView(productId) {
   `;
 
   modal.classList.remove('hidden');
-  document.body.style.overflow = 'hidden';
+  updateBodyScrollLock();
   initLucide();
 }
 
@@ -939,7 +1009,7 @@ function closeQuickView() {
   const modal = document.getElementById('quick-view-modal');
   if (modal) {
     modal.classList.add('hidden');
-    document.body.style.overflow = '';
+    updateBodyScrollLock();
   }
 }
 
@@ -966,7 +1036,10 @@ function toggleSearchModal(open) {
     document.getElementById('search-input')?.focus();
   } else {
     modal.classList.add('hidden');
+    const searchInput = document.getElementById('search-input');
+    if (searchInput) searchInput.blur();
   }
+  updateBodyScrollLock();
 }
 
 function handleSearch(query) {
@@ -999,7 +1072,7 @@ function handleSearch(query) {
         <h5 class="text-xs font-semibold text-stone-900">${isAr ? p.nameAr : p.nameEn}</h5>
         <span class="text-[11px] text-[#c89b67]">${p.price} ${isAr ? 'ر.س' : 'SAR'}</span>
       </div>
-      <i data-lucide="chevron-left" class="w-4 h-4 text-stone-400"></i>
+      <i data-lucide="${currentLang === 'ar' ? 'chevron-left' : 'chevron-right'}" class="w-4 h-4 text-stone-400"></i>
     </div>
   `).join('');
   initLucide();
@@ -1012,10 +1085,13 @@ function showToast(message) {
 
   const toast = document.createElement('div');
   toast.className = 'flex items-center gap-2.5 px-4 py-2.5 bg-[#141a13]/95 text-stone-100 text-xs font-medium rounded-xl shadow-xl border border-[#c89b67]/30 backdrop-blur-md transform transition-all duration-300 translate-y-2 opacity-0';
-  toast.innerHTML = `
-    <span class="w-2 h-2 rounded-full bg-[#e5b869] animate-ping"></span>
-    <span>${message}</span>
-  `;
+  const pingDot = document.createElement('span');
+  pingDot.className = 'w-2 h-2 rounded-full bg-[#e5b869] animate-ping';
+  const span = document.createElement('span');
+  span.textContent = message;
+  toast.innerHTML = '';
+  toast.appendChild(pingDot);
+  toast.appendChild(span);
 
   container.appendChild(toast);
   setTimeout(() => {

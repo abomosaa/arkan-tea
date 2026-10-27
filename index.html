@@ -6,6 +6,63 @@
   <title>أركان | ARKAN - شاي وقهوة مختصة بروح الأصالة والمعاصرة</title>
   <meta name="description" content="دار أركان للشاي والقهوة المختصة. توليفات شاي ملكية، محاصيل نادرة، وطقوس تحضير أصيلة تجمع بين الفخامة المعاصرة وكرم الضيافة العربية.">
   
+  <!-- SEO & Social Meta -->
+  <meta name="theme-color" content="#141a13">
+  <link rel="manifest" href="manifest.json">
+  <link rel="canonical" href="https://arkan-tea.com/">
+  
+  <!-- Preconnect & Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://images.unsplash.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Readex+Pro:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="أركان | ARKAN - شاي وقهوة مختصة بروح الأصالة والمعاصرة">
+  <meta property="og:description" content="دار أركان للشاي والقهوة المختصة. توليفات شاي ملكية، محاصيل نادرة، وطقوس تحضير أصيلة.">
+  <meta property="og:url" content="https://arkan-tea.com/">
+  <meta property="og:locale" content="ar_SA">
+  <meta property="og:site_name" content="أركان | ARKAN">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1576092768241-dec231879fc3?auto=format&fit=crop&w=1200&q=80">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="أركان | ARKAN - شاي وقهوة مختصة">
+  <meta name="twitter:description" content="دار أركان للشاي والقهوة المختصة. توليفات شاي ملكية ومحاصيل نادرة.">
+  <meta name="twitter:image" content="https://images.unsplash.com/photo-1576092768241-dec231879fc3?auto=format&fit=crop&w=1200&q=80">
+
+  <!-- JSON-LD Structured Data Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://arkan-tea.com/#organization",
+        "name": "أركان | ARKAN Specialty Tea & Roastery",
+        "url": "https://arkan-tea.com/",
+        "description": "دار أركان للشاي والقهوة المختصة بروح الأصالة النجدية والمعاصرة العالمية.",
+        "telephone": "+966920000000",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "الرياض",
+          "addressRegion": "منطقة الرياض",
+          "addressCountry": "SA"
+        }
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://arkan-tea.com/#website",
+        "url": "https://arkan-tea.com/",
+        "name": "أركان | ARKAN",
+        "publisher": { "@id": "https://arkan-tea.com/#organization" },
+        "inLanguage": "ar"
+      }
+    ]
+  }
+  </script>
+
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
@@ -35,7 +92,7 @@
   </script>
 
   <!-- Lucide Icons -->
-  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="https://unpkg.com/lucide@0.460.0"></script>
 
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='25' fill='%23141a13'/><path d='M50 20 C65 35 75 55 70 75 C55 80 35 70 30 50 C25 35 40 25 50 20 Z' fill='%23c89b67'/><circle cx='50' cy='50' r='6' fill='%23f7d794'/></svg>">
@@ -107,7 +164,7 @@
         <button onclick="toggleCartDrawer(true)" class="relative px-3.5 py-2 rounded-xl bg-[#c89b67] hover:bg-[#dfb17e] text-stone-950 font-semibold text-xs transition flex items-center gap-2 shadow-md">
           <i data-lucide="shopping-bag" class="w-4 h-4"></i>
           <span class="hidden sm:inline" data-i18n="cart_title">السلة</span>
-          <span class="cart-count-badge w-5 h-5 rounded-full bg-[#141a13] text-[#f7d794] text-[10px] font-bold flex items-center justify-center">2</span>
+          <span class="cart-count-badge hidden w-5 h-5 rounded-full bg-[#141a13] text-[#f7d794] text-[10px] font-bold items-center justify-center">0</span>
         </button>
 
         <!-- Mobile Menu Trigger -->
@@ -120,12 +177,12 @@
 
     <!-- Mobile Nav Dropdown -->
     <div id="mobile-nav" class="hidden lg:hidden bg-[#141a13] border-b border-[#c89b67]/20 px-6 py-4 space-y-3 text-sm text-stone-200">
-      <a href="index.html" class="block py-1 text-[#f7d794]" data-i18n="nav_home">الرئيسية</a>
-      <a href="catalog.html" class="block py-1 hover:text-[#f7d794]" data-i18n="nav_catalog">استكشاف الشاي</a>
-      <a href="#heritage" class="block py-1 hover:text-[#f7d794]" data-i18n="nav_story">قصتنا وتراثنا</a>
-      <a href="#bestsellers" class="block py-1 hover:text-[#f7d794]" data-i18n="nav_bestsellers">الأكثر مبيعاً</a>
-      <a href="#ceremony" class="block py-1 hover:text-[#f7d794]" data-i18n="nav_ceremony">طقوس التحضير</a>
-      <a href="#contact" class="block py-1 hover:text-[#f7d794]" data-i18n="nav_contact">تواصل معنا</a>
+      <a href="index.html" onclick="document.getElementById('mobile-nav').classList.add('hidden')" class="block py-1 text-[#f7d794]" data-i18n="nav_home">الرئيسية</a>
+      <a href="catalog.html" onclick="document.getElementById('mobile-nav').classList.add('hidden')" class="block py-1 hover:text-[#f7d794]" data-i18n="nav_catalog">استكشاف الشاي</a>
+      <a href="#heritage" onclick="document.getElementById('mobile-nav').classList.add('hidden')" class="block py-1 hover:text-[#f7d794]" data-i18n="nav_story">قصتنا وتراثنا</a>
+      <a href="#bestsellers" onclick="document.getElementById('mobile-nav').classList.add('hidden')" class="block py-1 hover:text-[#f7d794]" data-i18n="nav_bestsellers">الأكثر مبيعاً</a>
+      <a href="#ceremony" onclick="document.getElementById('mobile-nav').classList.add('hidden')" class="block py-1 hover:text-[#f7d794]" data-i18n="nav_ceremony">طقوس التحضير</a>
+      <a href="#contact" onclick="document.getElementById('mobile-nav').classList.add('hidden')" class="block py-1 hover:text-[#f7d794]" data-i18n="nav_contact">تواصل معنا</a>
     </div>
   </header>
 
@@ -640,9 +697,9 @@
             دار أركان للشاي والقهوة المختصة. نحتفي بأصالة الضيافة العربية عبر أفخر محاصيل الشاي الحرفية في العالم.
           </p>
           <div class="flex items-center gap-3 text-stone-400 pt-2">
-            <a href="#" class="w-8 h-8 rounded-lg bg-white/5 hover:bg-[#c89b67] hover:text-stone-950 flex items-center justify-center transition"><i data-lucide="instagram" class="w-4 h-4"></i></a>
-            <a href="#" class="w-8 h-8 rounded-lg bg-white/5 hover:bg-[#c89b67] hover:text-stone-950 flex items-center justify-center transition"><i data-lucide="twitter" class="w-4 h-4"></i></a>
-            <a href="#" class="w-8 h-8 rounded-lg bg-white/5 hover:bg-[#c89b67] hover:text-stone-950 flex items-center justify-center transition"><i data-lucide="facebook" class="w-4 h-4"></i></a>
+            <a href="https://instagram.com/arkan_tea" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="w-8 h-8 rounded-lg bg-white/5 hover:bg-[#c89b67] hover:text-stone-950 flex items-center justify-center transition"><i data-lucide="instagram" class="w-4 h-4"></i></a>
+            <a href="https://x.com/arkan_tea" target="_blank" rel="noopener noreferrer" aria-label="X Twitter" class="w-8 h-8 rounded-lg bg-white/5 hover:bg-[#c89b67] hover:text-stone-950 flex items-center justify-center transition"><i data-lucide="twitter" class="w-4 h-4"></i></a>
+            <a href="mailto:concierge@arkan-tea.com" aria-label="Email" class="w-8 h-8 rounded-lg bg-white/5 hover:bg-[#c89b67] hover:text-stone-950 flex items-center justify-center transition"><i data-lucide="mail" class="w-4 h-4"></i></a>
           </div>
         </div>
 
@@ -653,7 +710,9 @@
             <li><a href="catalog.html" class="hover:text-[#f7d794] transition">كتالوج الشاي الفاخر</a></li>
             <li><a href="#bestsellers" class="hover:text-[#f7d794] transition">الأكثر مبيعاً</a></li>
             <li><a href="#heritage" class="hover:text-[#f7d794] transition">قصة أركان والتراث</a></li>
-            <li><a href="#ceremony" class="hover:text-[#f7d794] transition">دليل التحضير ودرجات الحرارة</a></li>
+            <li><a href="checkout.html" class="hover:text-[#f7d794] transition">إتمام الطلب والدفع</a></li>
+            <li><a href="privacy.html" class="hover:text-[#f7d794] transition">سياسة الخصوصية</a></li>
+            <li><a href="terms.html" class="hover:text-[#f7d794] transition">الشروط والاسترجاع</a></li>
           </ul>
         </div>
 
@@ -735,7 +794,7 @@
       </div>
       <p class="text-[11px] text-stone-400">الأسعار تشمل ضريبة القيمة المضافة والشحن المبرد الفاخر.</p>
       
-      <button onclick="showToast(currentLang === 'ar' ? 'جارٍ تحويلك إلى بوابة الدفع المشفرة والآمنة...' : 'Redirecting to secure encrypted checkout...');" class="w-full py-3.5 rounded-xl bg-[#141a13] hover:bg-[#c89b67] text-[#f7d794] hover:text-stone-950 font-bold text-xs tracking-wider transition shadow-lg flex items-center justify-center gap-2">
+      <button onclick="proceedToCheckout()" class="w-full py-3.5 rounded-xl bg-[#141a13] hover:bg-[#c89b67] text-[#f7d794] hover:text-stone-950 font-bold text-xs tracking-wider transition shadow-lg flex items-center justify-center gap-2">
         <i data-lucide="shield-check" class="w-4 h-4"></i>
         <span data-i18n="cart_checkout">متابعة الشراء الآمن</span>
       </button>
