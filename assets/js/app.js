@@ -12,8 +12,8 @@ const PRODUCTS = [
     category: "black",
     categoryAr: "شاي أسود",
     categoryEn: "Black Tea",
-    price: 68,
-    oldPrice: 85,
+    price: 65,
+    oldPrice: 80,
     rating: 4.9,
     reviews: 142,
     weight: "250g / أوراق نقية",
@@ -23,7 +23,7 @@ const PRODUCTS = [
     temp: "95°C",
     steepTime: "3-4 دقائق",
     steepTimeEn: "3-4 Mins",
-    image: "https://images.unsplash.com/photo-1576092768241-dec231879fc3?auto=format&fit=crop&w=800&q=80",
+    image: "https://images.unsplash.com/photo-1597481499750-3e6b22637e12?auto=format&fit=crop&w=800&q=80",
     descriptionAr: "قطفة أولى من أوراق الشاي السيلاني العتيقة، معالجة بحرفية يدوية وتكشف عن نوتات عسل الدغموس وخشب الأرز الدافئ.",
     descriptionEn: "First-flush single estate Ceylon tea leaves, carefully handcrafted to reveal warm wild honey and subtle cedar undertones.",
     tag: "الأكثر طلباً",
@@ -39,8 +39,8 @@ const PRODUCTS = [
     category: "white",
     categoryAr: "شاي أبيض",
     categoryEn: "White & Green",
-    price: 92,
-    oldPrice: null,
+    price: 85,
+    oldPrice: 95,
     rating: 5.0,
     reviews: 89,
     weight: "150g / براعم فضية",
@@ -50,7 +50,7 @@ const PRODUCTS = [
     temp: "80°C",
     steepTime: "2-3 دقائق",
     steepTimeEn: "2-3 Mins",
-    image: "https://images.unsplash.com/photo-1597481499750-3e6b22637e12?auto=format&fit=crop&w=800&q=80",
+    image: "https://images.unsplash.com/photo-1576092768241-dec231879fc3?auto=format&fit=crop&w=800&q=80",
     descriptionAr: "براعم شاي فضية نادرة معطرة بأزهار الياسمين الطازجة التي تُقطف ليلاً لسبع دورات عطرية متعاقبة.",
     descriptionEn: "Rare silver needle white tea buds naturally scented with seven midnight blossomings of fresh jasmine petals.",
     tag: "محصول نادر",
@@ -66,8 +66,8 @@ const PRODUCTS = [
     category: "herbal",
     categoryAr: "شاي أعشاب",
     categoryEn: "Herbal Infusions",
-    price: 54,
-    oldPrice: 62,
+    price: 48,
+    oldPrice: 58,
     rating: 4.8,
     reviews: 210,
     weight: "180g / خالي من الكافيين",
@@ -77,7 +77,7 @@ const PRODUCTS = [
     temp: "100°C",
     steepTime: "5-7 دقائق",
     steepTimeEn: "5-7 Mins",
-    image: "https://images.unsplash.com/photo-1544787219-7f47ccb76574?auto=format&fit=crop&w=800&q=80",
+    image: "https://images.unsplash.com/photo-1594631252845-29fc4cc8cde9?auto=format&fit=crop&w=800&q=80",
     descriptionAr: "توليفة مهدئة من رؤوس زهور البابونج الذهبية الكاملة مع لمسات من الخزامى البري وأوراق النعناع المختار.",
     descriptionEn: "A soothing floral sanctuary crafted with whole golden chamomile heads, wild mountain lavender, and cool peppermint.",
     tag: "للاسترخاء",
@@ -93,8 +93,8 @@ const PRODUCTS = [
     category: "green",
     categoryAr: "ماتشا وشاي أخضر",
     categoryEn: "Ceremonial Matcha",
-    price: 135,
-    oldPrice: 150,
+    price: 125,
+    oldPrice: 145,
     rating: 4.9,
     reviews: 312,
     weight: "40g / مسحوق مطحون حجرياً",
@@ -120,8 +120,8 @@ const PRODUCTS = [
     category: "black",
     categoryAr: "توليفة أركان التراثية",
     categoryEn: "Heritage Blend",
-    price: 79,
-    oldPrice: null,
+    price: 72,
+    oldPrice: 85,
     rating: 5.0,
     reviews: 420,
     weight: "200g / علبة معدنية محكمة",
@@ -131,7 +131,7 @@ const PRODUCTS = [
     temp: "98°C",
     steepTime: "4 دقائق",
     steepTimeEn: "4 Mins",
-    image: "https://images.unsplash.com/photo-1594631252845-29fc4cc8cde9?auto=format&fit=crop&w=800&q=80",
+    image: "https://images.unsplash.com/photo-1509358271058-acd22cc93898?auto=format&fit=crop&w=800&q=80",
     descriptionAr: "التوليفة المميزة لدار أركان، تجمع بين الشاي الأسود القوي مع حبات الهيل الأخضر الملكي وخيوط الزعفران الإيراني الفاخر.",
     descriptionEn: "ARKAN's signature recipe marrying robust whole leaf Assam with green jumbo cardamom pods and pure Kashmiri saffron threads.",
     tag: "توقيع الدار",
@@ -147,8 +147,8 @@ const PRODUCTS = [
     category: "oolong",
     categoryAr: "شاي أولونغ",
     categoryEn: "Wuyi Oolong",
-    price: 115,
-    oldPrice: 140,
+    price: 98,
+    oldPrice: 120,
     rating: 4.8,
     reviews: 75,
     weight: "100g / أوراق مطوية يدوياً",
@@ -174,8 +174,8 @@ const PRODUCTS = [
     category: "teaware",
     categoryAr: "أدوات التحضير الفاخرة",
     categoryEn: "Artisanal Teaware",
-    price: 240,
-    oldPrice: 280,
+    price: 165,
+    oldPrice: 220,
     rating: 4.9,
     reviews: 98,
     weight: "سعة 650 مل / صلب حراري",
@@ -201,8 +201,8 @@ const PRODUCTS = [
     category: "teaware",
     categoryAr: "أكواب وتقديم",
     categoryEn: "To-Go Collection",
-    price: 38,
-    oldPrice: null,
+    price: 32,
+    oldPrice: 38,
     rating: 4.7,
     reviews: 512,
     weight: "12 أونصة / مزدوجة العزل",
@@ -340,7 +340,7 @@ const TRANSLATIONS = {
     cart_empty: "سلتك فارغة حالياً، استكشف تشكيلاتنا الفاخرة!",
     cart_subtotal: "المجموع الفرعي:",
     cart_shipping: "الشحن السريع:",
-    cart_free_shipping: "مجاني للطلبات فوق 200 ر.س",
+    cart_free_shipping: "مجاني للطلبات فوق 100 ر.س",
     cart_free_achieved: "تهانينا! حصلت على شحن مجاني فاخر 🎁",
     cart_remaining_prefix: "أضف بـ ",
     cart_remaining_suffix: " ر.س للحصول على الشحن المجاني",
@@ -428,7 +428,7 @@ const TRANSLATIONS = {
     cart_empty: "Your luxury cart is empty. Explore our private reserve!",
     cart_subtotal: "Subtotal:",
     cart_shipping: "Express White-Glove Shipping:",
-    cart_free_shipping: "Free shipping on orders above 200 SAR",
+    cart_free_shipping: "Free shipping on orders above 100 SAR",
     cart_free_achieved: "Congratulations! You've unlocked Complimentary Express Delivery 🎁",
     cart_remaining_prefix: "Add ",
     cart_remaining_suffix: " SAR more to qualify for Free Shipping",
@@ -724,7 +724,21 @@ function resetFilters() {
 }
 
 // Cart Mechanics
-function addToCart(productId, qty = 1) {
+function animateCartButton() {
+  const badges = document.querySelectorAll('.cart-count-badge');
+  badges.forEach(badge => {
+    badge.classList.add('scale-125');
+    setTimeout(() => badge.classList.remove('scale-125'), 300);
+  });
+  
+  const cartBtns = document.querySelectorAll('button[onclick*="toggleCartDrawer"]');
+  cartBtns.forEach(btn => {
+    btn.classList.add('ring-2', 'ring-[#e5b869]', 'scale-105');
+    setTimeout(() => btn.classList.remove('ring-2', 'ring-[#e5b869]', 'scale-105'), 350);
+  });
+}
+
+function addToCart(productId, qty = 1, openDrawer = false) {
   const existing = cart.find(item => item.id === productId);
   if (existing) {
     existing.quantity = Math.min(existing.quantity + qty, 10);
@@ -733,11 +747,22 @@ function addToCart(productId, qty = 1) {
   }
   saveCart();
   updateCartUI();
-  toggleCartDrawer(true);
+  animateCartButton();
+
+  // Only open drawer if explicitly requested (e.g. from checkout or modal)
+  if (openDrawer) {
+    toggleCartDrawer(true);
+  }
   
   const product = PRODUCTS.find(p => p.id === productId);
   const name = currentLang === 'ar' ? product.nameAr : product.nameEn;
-  showToast(currentLang === 'ar' ? `تمت إضافة "${name}" للسلة` : `Added "${name}" to your cart`);
+  const isAr = currentLang === 'ar';
+  
+  showToast(
+    isAr ? `تمت إضافة "${name}" إلى سلتك` : `Added "${name}" to your cart`,
+    isAr ? 'عرض السلة' : 'View Cart',
+    () => toggleCartDrawer(true)
+  );
 }
 
 function updateCartQuantity(productId, delta) {
@@ -793,7 +818,7 @@ function updateCartUI() {
     `;
     if (cartSubtotalEl) cartSubtotalEl.textContent = `0 ${isAr ? 'ر.س' : 'SAR'}`;
     if (cartShippingEl) cartShippingEl.style.width = '0%';
-    if (cartShippingText) cartShippingText.textContent = isAr ? 'أضف منتجات بقيمة 200 ر.س للشحن المجاني' : 'Add 200 SAR for Free Express Delivery';
+    if (cartShippingText) cartShippingText.textContent = isAr ? 'أضف منتجات بقيمة 100 ر.س للشحن المجاني' : 'Add 100 SAR for Free Express Delivery';
     initLucide();
     return;
   }
@@ -846,8 +871,8 @@ function updateCartUI() {
     }
   }
 
-  // Shipping progress (Target 200 SAR)
-  const freeThreshold = 200;
+  // Shipping progress (Target 100 SAR)
+  const freeThreshold = 100;
   const progressPercent = Math.min(100, (subtotal / freeThreshold) * 100);
   if (cartShippingEl) cartShippingEl.style.width = `${progressPercent}%`;
 
@@ -1078,20 +1103,35 @@ function handleSearch(query) {
   initLucide();
 }
 
-// Toast System
-function showToast(message) {
+// Toast System with optional Action Button
+function showToast(message, actionText = null, onAction = null) {
   const container = document.getElementById('toast-container');
   if (!container) return;
 
   const toast = document.createElement('div');
-  toast.className = 'flex items-center gap-2.5 px-4 py-2.5 bg-[#141a13]/95 text-stone-100 text-xs font-medium rounded-xl shadow-xl border border-[#c89b67]/30 backdrop-blur-md transform transition-all duration-300 translate-y-2 opacity-0';
+  toast.className = 'flex items-center gap-3 px-4 py-2.5 bg-[#141a13]/95 text-stone-100 text-xs font-medium rounded-xl shadow-xl border border-[#c89b67]/30 backdrop-blur-md transform transition-all duration-300 translate-y-2 opacity-0 pointer-events-auto';
+  
   const pingDot = document.createElement('span');
-  pingDot.className = 'w-2 h-2 rounded-full bg-[#e5b869] animate-ping';
-  const span = document.createElement('span');
-  span.textContent = message;
-  toast.innerHTML = '';
+  pingDot.className = 'w-2 h-2 rounded-full bg-[#e5b869] animate-pulse shrink-0';
+  
+  const textSpan = document.createElement('span');
+  textSpan.className = 'truncate max-w-[200px] sm:max-w-[280px]';
+  textSpan.textContent = message;
+  
   toast.appendChild(pingDot);
-  toast.appendChild(span);
+  toast.appendChild(textSpan);
+
+  if (actionText && typeof onAction === 'function') {
+    const actionBtn = document.createElement('button');
+    actionBtn.className = 'px-2.5 py-1 text-[11px] font-bold text-stone-950 bg-[#e5b869] hover:bg-[#f7d794] rounded-lg transition shrink-0';
+    actionBtn.textContent = actionText;
+    actionBtn.onclick = (e) => {
+      e.stopPropagation();
+      onAction();
+      toast.remove();
+    };
+    toast.appendChild(actionBtn);
+  }
 
   container.appendChild(toast);
   setTimeout(() => {
@@ -1101,7 +1141,7 @@ function showToast(message) {
   setTimeout(() => {
     toast.classList.add('opacity-0', 'translate-y-2');
     setTimeout(() => toast.remove(), 300);
-  }, 3200);
+  }, 3800);
 }
 
 // Newsletter Submit

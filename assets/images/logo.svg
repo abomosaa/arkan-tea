@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
+  <!-- Subtle dark container background with rounded corners -->
+  <rect width="100" height="100" rx="24" fill="#141A13"/>
+  
+  <!-- Outer Decorative Gold Border -->
+  <rect x="2" y="2" width="96" height="96" rx="22" stroke="url(#arkan-border)" stroke-width="2"/>
+  
+  <!-- The Four Pillars (الأركان) Geometric Brackets -->
+  <path d="M22 36V24C22 22.8954 22.8954 22 24 22H36" stroke="#F7D794" stroke-width="4.5" stroke-linecap="round"/>
+  <path d="M64 22H76C77.1046 22 78 22.8954 78 24V36" stroke="#F7D794" stroke-width="4.5" stroke-linecap="round"/>
+  <path d="M78 64V76C78 77.1046 77.1046 78 76 78H64" stroke="#F7D794" stroke-width="4.5" stroke-linecap="round"/>
+  <path d="M36 78H24C22.8954 78 22 77.1046 22 76V64" stroke="#F7D794" stroke-width="4.5" stroke-linecap="round"/>
+  
+  <!-- Central Emblem: Sacred Tea Sprout & Essence Droplet -->
+  <path d="M50 26C59 36 63 46 57 55C52 62 43 60 41 51C39 42 46 31 50 26Z" fill="url(#arkan-gold)"/>
+  <path d="M43 51C47 47 53 40 50 29" stroke="#141A13" stroke-width="2.5" stroke-linecap="round"/>
+  <circle cx="50" cy="67" r="3.5" fill="#F7D794"/>
+  
+  <defs>
+    <linearGradient id="arkan-border" x1="0" y1="0" x2="100" y2="100" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#C89B67"/>
+      <stop offset="0.5" stop-color="#E5B869"/>
+      <stop offset="1" stop-color="#8C673B"/>
+    </linearGradient>
+    <linearGradient id="arkan-gold" x1="39" y1="26" x2="63" y2="62" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F7D794"/>
+      <stop offset="0.6" stop-color="#E5B869"/>
+      <stop offset="1" stop-color="#C89B67"/>
+    </linearGradient>
+  </defs>
+</svg>
