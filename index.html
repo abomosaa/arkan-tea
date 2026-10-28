@@ -137,11 +137,11 @@
           </div>
         </div>
         <div>
-          <span class="text-xl font-bold tracking-wider text-white flex items-center gap-1.5">
+          <span class="text-base sm:text-xl font-bold tracking-wider text-white flex items-center gap-1.5">
             <span data-i18n="brand_name">أركان</span>
-            <span class="text-[10px] tracking-widest text-[#c89b67] font-sans uppercase font-medium">ARKAN</span>
+            <span class="text-[10px] tracking-widest text-[#c89b67] font-sans uppercase font-medium rtl:inline ltr:hidden">ARKAN</span>
           </span>
-          <span class="text-[10px] text-stone-400 block tracking-widest uppercase font-light" data-i18n="brand_sub">شاي وقهوة مختصة</span>
+          <span class="text-[10px] text-stone-400 hidden sm:block tracking-widest uppercase font-light" data-i18n="brand_sub">شاي وقهوة مختصة</span>
         </div>
       </a>
 
@@ -156,28 +156,28 @@
       </nav>
 
       <!-- Action Icons (Lang, Search, Cart) -->
-      <div class="flex items-center gap-2 sm:gap-3">
+      <div class="flex items-center gap-1 sm:gap-2.5 shrink-0">
         <!-- Language Switcher -->
-        <button onclick="setLanguage(currentLang === 'ar' ? 'en' : 'ar')" class="px-2.5 py-1 text-xs font-semibold text-stone-200 bg-white/5 hover:bg-white/10 border border-white/10 rounded-lg transition flex items-center gap-1">
-          <i data-lucide="globe" class="w-3.5 h-3.5 text-[#c89b67]"></i>
+        <button onclick="setLanguage(currentLang === 'ar' ? 'en' : 'ar')" class="px-2 sm:px-2.5 py-1 text-[11px] sm:text-xs font-semibold text-stone-200 bg-white/5 hover:bg-white/10 border border-white/10 rounded-lg transition flex items-center gap-1">
+          <i data-lucide="globe" class="w-3 sm:w-3.5 h-3 sm:h-3.5 text-[#c89b67]"></i>
           <span id="lang-toggle-text">EN</span>
         </button>
 
         <!-- Search Button -->
-        <button onclick="toggleSearchModal(true)" class="w-9 h-9 rounded-lg bg-white/5 hover:bg-white/10 border border-white/10 flex items-center justify-center text-stone-200 hover:text-white transition">
-          <i data-lucide="search" class="w-4 h-4"></i>
+        <button onclick="toggleSearchModal(true)" class="w-8 h-8 sm:w-9 sm:h-9 rounded-lg bg-white/5 hover:bg-white/10 border border-white/10 flex items-center justify-center text-stone-200 hover:text-white transition">
+          <i data-lucide="search" class="w-3.5 sm:w-4 h-3.5 sm:h-4"></i>
         </button>
 
         <!-- Cart Button with Dynamic Badge -->
-        <button onclick="toggleCartDrawer(true)" class="relative px-3.5 py-2 rounded-xl bg-[#c89b67] hover:bg-[#dfb17e] text-stone-950 font-semibold text-xs transition flex items-center gap-2 shadow-md">
-          <i data-lucide="shopping-bag" class="w-4 h-4"></i>
+        <button onclick="toggleCartDrawer(true)" class="relative px-2 sm:px-3.5 py-1.5 sm:py-2 rounded-xl bg-[#c89b67] hover:bg-[#dfb17e] text-stone-950 font-semibold text-xs transition flex items-center gap-1.5 sm:gap-2 shadow-md">
+          <i data-lucide="shopping-bag" class="w-3.5 sm:w-4 h-3.5 sm:h-4"></i>
           <span class="hidden sm:inline" data-i18n="cart_title">السلة</span>
-          <span class="cart-count-badge hidden w-5 h-5 rounded-full bg-[#141a13] text-[#f7d794] text-[10px] font-bold items-center justify-center">0</span>
+          <span class="cart-count-badge hidden w-4 sm:w-5 h-4 sm:h-5 rounded-full bg-[#141a13] text-[#f7d794] text-[9px] sm:text-[10px] font-bold items-center justify-center">0</span>
         </button>
 
         <!-- Mobile Menu Trigger -->
-        <button onclick="document.getElementById('mobile-nav').classList.toggle('hidden')" class="lg:hidden w-9 h-9 rounded-lg bg-white/5 text-stone-200 flex items-center justify-center">
-          <i data-lucide="menu" class="w-5 h-5"></i>
+        <button onclick="document.getElementById('mobile-nav').classList.toggle('hidden')" class="lg:hidden w-8 h-8 sm:w-9 sm:h-9 rounded-lg bg-white/5 text-stone-200 flex items-center justify-center">
+          <i data-lucide="menu" class="w-4 h-4"></i>
         </button>
       </div>
 
@@ -257,12 +257,18 @@
         </div>
 
         <!-- Right Visual Showcase (5 Cols) -->
-        <div class="lg:col-span-5 relative max-w-sm mx-auto lg:max-w-none">
+        <div class="lg:col-span-5 relative w-full max-w-md lg:max-w-none mx-auto">
           <!-- Main Hero Showcase Card -->
-          <div class="relative rounded-3xl p-4 sm:p-6 glass-card-dark shadow-2xl overflow-hidden group hero-float">
-            <div class="relative h-56 sm:h-80 md:h-96 rounded-2xl overflow-hidden mb-4 sm:mb-5">
+          <div class="relative rounded-3xl p-4 sm:p-5 glass-card-dark shadow-2xl overflow-hidden group hero-float">
+            <div class="relative aspect-[4/3] sm:h-80 lg:h-96 rounded-2xl overflow-hidden">
               <img src="https://images.unsplash.com/photo-1576092768241-dec231879fc3?auto=format&fit=crop&w=1000&q=80" alt="ARKAN Luxury Tea Packaging" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
               
+              <!-- Floating Luxury Badge -->
+              <div class="absolute top-3 sm:top-4 start-3 sm:start-4 z-20 px-3 py-1.5 rounded-full bg-[#141a13]/85 backdrop-blur-md border border-[#c89b67]/40 text-[#f7d794] text-[11px] font-semibold flex items-center gap-1.5 shadow-lg">
+                <span class="w-2 h-2 rounded-full bg-[#c89b67] pulse-glow"></span>
+                <span data-i18n="hero_card_tag">التوليفة الملكية الخاصة • Reserve 2026</span>
+              </div>
+
               <!-- Atmospheric Rising Steam Wisps -->
               <div class="absolute inset-0 pointer-events-none overflow-hidden z-10">
                 <div class="absolute bottom-16 right-1/3 w-8 h-16 bg-gradient-to-t from-white/25 to-transparent blur-md rounded-full steam-wisp-1"></div>
@@ -270,27 +276,38 @@
                 <div class="absolute bottom-14 right-1/4 w-7 h-12 bg-gradient-to-t from-white/20 to-transparent blur-md rounded-full steam-wisp-3"></div>
               </div>
 
-              <!-- Floating Card with Cup & Packaging -->
-              <div class="absolute bottom-3 sm:bottom-4 inset-x-3 sm:inset-x-4 p-3 sm:p-4 rounded-xl bg-[#141a13]/90 backdrop-blur-md border border-[#c89b67]/30 flex items-center justify-between z-20">
+              <!-- Bottom Editorial Showcase Bar -->
+              <div class="absolute bottom-0 inset-x-0 p-4 sm:p-5 bg-gradient-to-t from-[#141a13] via-[#141a13]/90 to-transparent z-20 flex flex-col sm:flex-row sm:items-end justify-between gap-3">
                 <div class="min-w-0">
-                  <span class="text-[9px] sm:text-[10px] text-[#c89b67] tracking-wider uppercase font-semibold block truncate">التوليفة الملكية الخاصة</span>
-                  <h4 class="text-xs sm:text-sm font-bold text-white truncate">شاي أسود معتق مع عبوة حافظة</h4>
+                  <span class="text-[10px] text-[#c89b67] tracking-widest uppercase font-bold block mb-0.5" data-i18n="flavor_amber">عنبر دافئ • خشب الصندل</span>
+                  <h3 class="text-xs sm:text-sm md:text-base font-bold text-white leading-snug" data-i18n="hero_card_title">شاي أسود معتق مع عبوة حافظة فاخرة</h3>
                 </div>
-                <button onclick="addToCart(1)" class="w-9 h-9 rounded-lg bg-[#c89b67] hover:bg-[#dfb17e] text-stone-950 flex items-center justify-center transition shadow-md">
-                  <i data-lucide="plus" class="w-4 h-4"></i>
+                <button onclick="addToCart(1)" class="px-4 py-2 rounded-xl bg-[#c89b67] hover:bg-[#dfb17e] text-stone-950 font-bold text-xs transition shadow-md shrink-0 flex items-center justify-center gap-1.5 self-start sm:self-auto">
+                  <i data-lucide="shopping-bag" class="w-3.5 h-3.5"></i>
+                  <span data-i18n="add_to_cart">أضف للسلة</span>
                 </button>
               </div>
             </div>
 
             <!-- Mini Spec Highlights -->
-            <div class="grid grid-cols-2 gap-3 text-xs">
-              <div class="p-3 rounded-xl bg-white/5 border border-white/5">
-                <span class="text-stone-400 block text-[10px]">درجة الحرارة</span>
-                <span class="font-bold text-[#f7d794]">95°C درجة مئوية</span>
+            <div class="grid grid-cols-2 gap-3 text-xs mt-3 sm:mt-4">
+              <div class="p-3 rounded-xl bg-white/5 border border-white/5 flex items-center gap-2.5">
+                <div class="w-7 h-7 rounded-lg bg-[#c89b67]/15 flex items-center justify-center text-[#f7d794] shrink-0">
+                  <i data-lucide="thermometer" class="w-3.5 h-3.5"></i>
+                </div>
+                <div class="min-w-0">
+                  <span class="text-stone-400 block text-[10px] truncate" data-i18n="steeping_label">درجة الحرارة المثالية</span>
+                  <span class="font-bold text-[#f7d794] text-xs truncate block" data-i18n="hero_card_temp">95°C درجة مثالية</span>
+                </div>
               </div>
-              <div class="p-3 rounded-xl bg-white/5 border border-white/5">
-                <span class="text-stone-400 block text-[10px]">وقت الاستخلاص</span>
-                <span class="font-bold text-[#f7d794]">3-4 دقائق فقط</span>
+              <div class="p-3 rounded-xl bg-white/5 border border-white/5 flex items-center gap-2.5">
+                <div class="w-7 h-7 rounded-lg bg-[#c89b67]/15 flex items-center justify-center text-[#f7d794] shrink-0">
+                  <i data-lucide="clock" class="w-3.5 h-3.5"></i>
+                </div>
+                <div class="min-w-0">
+                  <span class="text-stone-400 block text-[10px] truncate" data-i18n="origin_label">المنشأ والحصاد</span>
+                  <span class="font-bold text-[#f7d794] text-xs truncate block" data-i18n="hero_card_steep">3-4 دقائق استخلاص</span>
+                </div>
               </div>
             </div>
           </div>
@@ -302,8 +319,8 @@
 
   <!-- ================= HERITAGE & CONTEMPORARY CULTURE ================= -->
   <!-- Modernized replacement for the bright orange block from image 1 -->
-  <section id="heritage" class="py-20 bg-gradient-to-r from-[#b5854f] via-[#c89b67] to-[#b5854f] text-stone-950 relative overflow-hidden scroll-reveal">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <section id="heritage" class="py-12 sm:py-20 bg-gradient-to-r from-[#b5854f] via-[#c89b67] to-[#b5854f] text-stone-950 relative overflow-hidden scroll-reveal">
+    <div class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
         
         <!-- Text Story -->
@@ -338,18 +355,18 @@
         </div>
 
         <!-- Architectural & Heritage Photo Duo -->
-        <div class="lg:col-span-6 grid grid-cols-2 gap-4">
-          <div class="relative rounded-2xl overflow-hidden shadow-2xl h-72 sm:h-80 transform -rotate-1 hover:rotate-0 transition duration-500">
+        <div class="lg:col-span-6 grid grid-cols-2 gap-3 sm:gap-4">
+          <div class="relative rounded-2xl overflow-hidden shadow-2xl h-52 sm:h-72 lg:h-80 transform-none sm:-rotate-1 hover:rotate-0 transition duration-500">
             <img src="https://images.unsplash.com/photo-1549880338-65ddcdfd017b?auto=format&fit=crop&w=800&q=80" alt="Arabian Heritage Architecture" class="w-full h-full object-cover">
-            <div class="absolute inset-0 bg-gradient-to-t from-stone-950/60 via-transparent to-transparent flex items-end p-4">
-              <span class="text-white text-xs font-semibold">العمارة الطينية النجدية وتراث الضيافة</span>
+            <div class="absolute inset-0 bg-gradient-to-t from-stone-950/75 via-transparent to-transparent flex items-end p-3 sm:p-4">
+              <span class="text-white text-[11px] sm:text-xs font-semibold" data-i18n="heritage_img1_caption">العمارة الطينية النجدية وتراث الضيافة</span>
             </div>
           </div>
 
-          <div class="relative rounded-2xl overflow-hidden shadow-2xl h-72 sm:h-80 transform rotate-2 hover:rotate-0 transition duration-500 mt-6 sm:mt-10">
+          <div class="relative rounded-2xl overflow-hidden shadow-2xl h-52 sm:h-72 lg:h-80 transform-none sm:rotate-2 hover:rotate-0 transition duration-500 mt-4 sm:mt-10">
             <img src="https://images.unsplash.com/photo-1576092768241-dec231879fc3?auto=format&fit=crop&w=800&q=80" alt="Ceremonial Tea Service" class="w-full h-full object-cover">
-            <div class="absolute inset-0 bg-gradient-to-t from-stone-950/60 via-transparent to-transparent flex items-end p-4">
-              <span class="text-white text-xs font-semibold">طقوس السكب والضيافة الرفيعة</span>
+            <div class="absolute inset-0 bg-gradient-to-t from-stone-950/75 via-transparent to-transparent flex items-end p-3 sm:p-4">
+              <span class="text-white text-[11px] sm:text-xs font-semibold" data-i18n="heritage_img2_caption">طقوس السكب والضيافة الرفيعة</span>
             </div>
           </div>
         </div>
@@ -372,7 +389,7 @@
         </div>
 
         <a href="catalog.html" class="inline-flex items-center gap-1.5 text-xs font-bold text-[#c89b67] hover:text-[#141a13] transition self-start md:self-end pb-1 border-b border-[#c89b67]/40">
-          <span>عرض الكتالوج الشامل (+24 صنف)</span>
+          <span data-i18n="nav_explore_all">عرض الكتالوج الشامل (+24 صنف)</span>
           <i data-lucide="arrow-left" class="w-3.5 h-3.5 rtl:rotate-0 ltr:rotate-180"></i>
         </a>
       </div>
@@ -390,10 +407,10 @@
             </div>
             <div>
               <h3 class="text-sm sm:text-base font-bold text-white flex items-center gap-2">
-                <span>مساعد الذوق التفاعلي (Sensory Sommelier)</span>
-                <span class="px-2 py-0.5 text-[10px] font-medium bg-[#c89b67] text-stone-950 rounded-full">ذكي وتفاعلي</span>
+                <span data-i18n="sommelier_badge">مساعد الذوق التفاعلي</span>
+                <span class="px-2 py-0.5 text-[10px] font-medium bg-[#c89b67] text-stone-950 rounded-full" data-i18n="sommelier_smart">ذكي وتفاعلي</span>
               </h3>
-              <p class="text-xs text-stone-300">كيف تود أن تشعر اليوم؟ انقر على حالتك وسيقوم النظام فوراً بتصفية الشاي الأنسب لك في القائمة أدناه:</p>
+              <p class="text-xs text-stone-300" data-i18n="sommelier_prompt">كيف تود أن تشعر اليوم؟ انقر على حالتك وسيقوم النظام فوراً بتصفية الشاي الأنسب لك في القائمة أدناه:</p>
             </div>
           </div>
 
@@ -480,7 +497,7 @@
   <!-- ================= BENTO GRID: SHOP BY CATEGORIES ================= -->
   <!-- Modernized replacement for the category photos collage in image 1 -->
   <section class="py-20 bg-[#f3efe9] border-y border-stone-200/60 scroll-reveal">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
       <div class="text-center max-w-xl mx-auto mb-12">
         <span class="text-xs font-semibold uppercase tracking-wider text-[#c89b67]" data-i18n="categories_sub">استكشف عالم النكهات</span>
         <h2 class="text-2xl sm:text-3xl font-bold font-serif text-stone-900 mt-1" data-i18n="categories_title">تصنيفات الشاي والأدوات الفاخرة</h2>
@@ -490,9 +507,9 @@
       <div class="grid grid-cols-1 md:grid-cols-12 gap-5 h-auto">
         
         <!-- Large Card 1: Loose Leaf Black & Reserve (Col 7) -->
-        <a href="catalog.html?category=black" class="md:col-span-7 relative h-80 rounded-3xl overflow-hidden group shadow-md cursor-pointer">
+        <a href="catalog.html?category=black" class="md:col-span-7 relative h-64 sm:h-80 rounded-3xl overflow-hidden group shadow-md cursor-pointer">
           <img src="https://images.unsplash.com/photo-1594631252845-29fc4cc8cde9?auto=format&fit=crop&w=1000&q=80" alt="Black Tea & Spices" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
-          <div class="absolute inset-0 bg-gradient-to-t from-stone-950/85 via-stone-950/40 to-transparent flex flex-col justify-end p-8 text-white">
+          <div class="absolute inset-0 bg-gradient-to-t from-stone-950/85 via-stone-950/40 to-transparent flex flex-col justify-end p-5 sm:p-8 text-white">
             <span class="text-xs font-semibold text-[#f7d794] uppercase tracking-wider mb-1">الركن الأسود والتوابل الملكية</span>
             <h3 class="text-2xl font-bold font-serif mb-2">أوراق الشاي الأسود ومزيج الهيل والزعفران</h3>
             <p class="text-xs text-stone-300 max-w-md">توليفات كلاسيكية تفيض بالدفء والعمق، معتقة ومحضرة بحرفية فائقة.</p>
@@ -500,9 +517,9 @@
         </a>
 
         <!-- Card 2: Herbal & Chamomile (Col 5) -->
-        <a href="catalog.html?category=herbal" class="md:col-span-5 relative h-80 rounded-3xl overflow-hidden group shadow-md cursor-pointer">
+        <a href="catalog.html?category=herbal" class="md:col-span-5 relative h-64 sm:h-80 rounded-3xl overflow-hidden group shadow-md cursor-pointer">
           <img src="https://images.unsplash.com/photo-1544787219-7f47ccb76574?auto=format&fit=crop&w=800&q=80" alt="Herbal Chamomile" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
-          <div class="absolute inset-0 bg-gradient-to-t from-stone-950/85 via-stone-950/30 to-transparent flex flex-col justify-end p-8 text-white">
+          <div class="absolute inset-0 bg-gradient-to-t from-stone-950/85 via-stone-950/30 to-transparent flex flex-col justify-end p-5 sm:p-8 text-white">
             <span class="text-xs font-semibold text-[#f7d794] uppercase tracking-wider mb-1">عالم الأعشاب والسكينة</span>
             <h3 class="text-xl font-bold font-serif mb-1">البابونج، الخزامى، ونعناع المدينة</h3>
             <p class="text-xs text-stone-300">خالية من الكافيين لتمنحك نوماً هانئاً واسترخاءً عميقاً.</p>
@@ -510,7 +527,7 @@
         </a>
 
         <!-- Card 3: Ceremonial Matcha & Green (Col 4) -->
-        <a href="catalog.html?category=green" class="md:col-span-4 relative h-72 rounded-3xl overflow-hidden group shadow-md cursor-pointer">
+        <a href="catalog.html?category=green" class="md:col-span-4 relative h-60 sm:h-72 rounded-3xl overflow-hidden group shadow-md cursor-pointer">
           <img src="https://images.unsplash.com/photo-1536256263959-770b48d82b0a?auto=format&fit=crop&w=800&q=80" alt="Matcha" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
           <div class="absolute inset-0 bg-gradient-to-t from-stone-950/85 via-stone-950/30 to-transparent flex flex-col justify-end p-6 text-white">
             <span class="text-[11px] font-semibold text-[#f7d794] uppercase tracking-wider mb-1">ماتشا أوجي اليابانية</span>
@@ -519,7 +536,7 @@
         </a>
 
         <!-- Card 4: Artisanal Stoneware & Teapots (Col 4) -->
-        <a href="catalog.html?category=teaware" class="md:col-span-4 relative h-72 rounded-3xl overflow-hidden group shadow-md cursor-pointer">
+        <a href="catalog.html?category=teaware" class="md:col-span-4 relative h-60 sm:h-72 rounded-3xl overflow-hidden group shadow-md cursor-pointer">
           <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=800&q=80" alt="Ceramic Teapots" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
           <div class="absolute inset-0 bg-gradient-to-t from-stone-950/85 via-stone-950/30 to-transparent flex flex-col justify-end p-6 text-white">
             <span class="text-[11px] font-semibold text-[#f7d794] uppercase tracking-wider mb-1">حرفية الخزف اليدوي</span>
@@ -528,7 +545,7 @@
         </a>
 
         <!-- Card 5: Iconic To-Go Cups & Lifestyle (Col 4) -->
-        <a href="catalog.html?category=teaware" class="md:col-span-4 relative h-72 rounded-3xl overflow-hidden group shadow-md cursor-pointer">
+        <a href="catalog.html?category=teaware" class="md:col-span-4 relative h-60 sm:h-72 rounded-3xl overflow-hidden group shadow-md cursor-pointer">
           <img src="https://images.unsplash.com/photo-1517256064527-09c73fc73e38?auto=format&fit=crop&w=800&q=80" alt="To-Go Coffee & Tea Cups" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
           <div class="absolute inset-0 bg-gradient-to-t from-stone-950/85 via-stone-950/30 to-transparent flex flex-col justify-end p-6 text-white">
             <span class="text-[11px] font-semibold text-[#f7d794] uppercase tracking-wider mb-1">سلسلة الأكواب المحمولة</span>
@@ -567,45 +584,45 @@
   </section>
 
   <!-- ================= TEA CEREMONY / BREWING RITUALS ================= -->
-  <section id="ceremony" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 scroll-reveal">
+  <section id="ceremony" class="py-12 sm:py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 scroll-reveal">
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
       
       <div class="lg:col-span-5 relative">
         <div class="rounded-3xl overflow-hidden shadow-2xl border border-stone-200">
-          <img src="https://images.unsplash.com/photo-1597481499750-3e6b22637e12?auto=format&fit=crop&w=900&q=80" alt="Tea Infusion Pour" class="w-full h-96 object-cover">
+          <img src="https://images.unsplash.com/photo-1597481499750-3e6b22637e12?auto=format&fit=crop&w=900&q=80" alt="Tea Infusion Pour" class="w-full h-64 sm:h-96 object-cover">
         </div>
       </div>
 
-      <div class="lg:col-span-7 space-y-6">
-        <span class="text-xs font-semibold uppercase tracking-wider text-[#c89b67]">فن التحضير الملكي</span>
-        <h2 class="text-2xl sm:text-3xl font-bold font-serif text-stone-900">أسرار استخلاص النكهات الكاملة لورقة الشاي</h2>
-        <p class="text-stone-600 text-sm leading-relaxed">
+      <div class="lg:col-span-7 space-y-4 sm:space-y-6">
+        <span class="text-xs font-semibold uppercase tracking-wider text-[#c89b67]" data-i18n="ceremony_sub">فن التحضير الملكي</span>
+        <h2 class="text-2xl sm:text-3xl font-bold font-serif text-stone-900" data-i18n="ceremony_title">أسرار استخلاص النكهات الكاملة لورقة الشاي</h2>
+        <p class="text-stone-600 text-xs sm:text-sm leading-relaxed" data-i18n="ceremony_desc">
           ورقة الشاي كائن حي يتنفس؛ درجة حرارة الماء ونوعية الإناء وزمن السكب هي ما يحول الكوب من مجرد شاي إلى تجربة حسية خالدة.
         </p>
 
         <!-- 3 Step Guide -->
-        <div class="space-y-4 pt-2">
-          <div class="flex items-start gap-4 p-4 rounded-2xl bg-white border border-stone-200/70 shadow-sm">
+        <div class="space-y-3 sm:space-y-4 pt-2">
+          <div class="flex items-start gap-3 sm:gap-4 p-3 sm:p-4 rounded-2xl bg-white border border-stone-200/70 shadow-sm">
             <span class="w-8 h-8 rounded-xl bg-[#141a13] text-[#f7d794] flex items-center justify-center font-bold text-xs shrink-0">1</span>
             <div>
-              <h4 class="text-xs font-bold text-stone-900 mb-1">درجة حرارة الماء المدروسة</h4>
-              <p class="text-xs text-stone-500">لا تغلي الماء أبداً فوق 80°C للشاي الأبيض والماتشا لحماية مضادات الأكسدة والسكريات الطبيعية.</p>
+              <h4 class="text-xs font-bold text-stone-900 mb-0.5 sm:mb-1" data-i18n="ceremony_step1_title">درجة حرارة الماء المدروسة</h4>
+              <p class="text-xs text-stone-500" data-i18n="ceremony_step1_desc">لا تغلي الماء أبداً فوق 80°C للشاي الأبيض والماتشا لحماية مضادات الأكسدة والسكريات الطبيعية.</p>
             </div>
           </div>
 
-          <div class="flex items-start gap-4 p-4 rounded-2xl bg-white border border-stone-200/70 shadow-sm">
+          <div class="flex items-start gap-3 sm:gap-4 p-3 sm:p-4 rounded-2xl bg-white border border-stone-200/70 shadow-sm">
             <span class="w-8 h-8 rounded-xl bg-[#c89b67] text-stone-950 flex items-center justify-center font-bold text-xs shrink-0">2</span>
             <div>
-              <h4 class="text-xs font-bold text-stone-900 mb-1">شطف الأوراق الأولي (إيقاظ الروح)</h4>
-              <p class="text-xs text-stone-500">صب الماء لمدة 5 ثوان ثم اسكبه، هذا يفتح مسام الورقة ويحرر العبير الزيتي الدفين.</p>
+              <h4 class="text-xs font-bold text-stone-900 mb-0.5 sm:mb-1" data-i18n="ceremony_step2_title">شطف الأوراق الأولي (إيقاظ الروح)</h4>
+              <p class="text-xs text-stone-500" data-i18n="ceremony_step2_desc">صب الماء لمدة 5 ثوان ثم اسكبه، هذا يفتح مسام الورقة ويحرر العبير الزيتي الدفين.</p>
             </div>
           </div>
 
-          <div class="flex items-start gap-4 p-4 rounded-2xl bg-white border border-stone-200/70 shadow-sm">
+          <div class="flex items-start gap-3 sm:gap-4 p-3 sm:p-4 rounded-2xl bg-white border border-stone-200/70 shadow-sm">
             <span class="w-8 h-8 rounded-xl bg-[#141a13] text-[#f7d794] flex items-center justify-center font-bold text-xs shrink-0">3</span>
             <div>
-              <h4 class="text-xs font-bold text-stone-900 mb-1">السكب الانسيابي من ارتفاع معتدل</h4>
-              <p class="text-xs text-stone-500">يساعد السكب المتوازن على إدخال فقاعات الأكسجين في السائل مما يمنح قواماً مخملياً في الفم.</p>
+              <h4 class="text-xs font-bold text-stone-900 mb-0.5 sm:mb-1" data-i18n="ceremony_step3_title">السكب الانسيابي من ارتفاع معتدل</h4>
+              <p class="text-xs text-stone-500" data-i18n="ceremony_step3_desc">يساعد السكب المتوازن على إدخال فقاعات الأكسجين في السائل مما يمنح قواماً مخملياً في الفم.</p>
             </div>
           </div>
         </div>
@@ -617,7 +634,7 @@
   <!-- ================= INSTAGRAM / COMMUNITY FEED ================= -->
   <!-- Modernized version of image 1's "RUKN's Insta Feed" with takeaway cups -->
   <section class="py-16 bg-[#faf8f5]">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
       <div class="flex flex-col sm:flex-row items-center justify-between mb-8">
         <div>
           <span class="text-xs font-semibold text-[#c89b67] uppercase tracking-wider">مجتمع أركان</span>
@@ -699,7 +716,7 @@
 
   <!-- ================= COMPREHENSIVE FOOTER ================= -->
   <footer id="contact" class="bg-[#141a13] text-stone-300 pt-16 pb-12 border-t border-[#c89b67]/20">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
       <div class="grid grid-cols-1 md:grid-cols-12 gap-10 pb-12 border-b border-white/10">
         
         <!-- Brand Bio (Col 4) -->
