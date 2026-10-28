@@ -137,8 +137,8 @@
           </div>
         </div>
         <div>
-          <span class="text-xl font-bold tracking-wider text-white flex items-center gap-1.5" data-i18n="brand_name">
-            أركان
+          <span class="text-xl font-bold tracking-wider text-white flex items-center gap-1.5">
+            <span data-i18n="brand_name">أركان</span>
             <span class="text-[10px] tracking-widest text-[#c89b67] font-sans uppercase font-medium">ARKAN</span>
           </span>
           <span class="text-[10px] text-stone-400 block tracking-widest uppercase font-light" data-i18n="brand_sub">شاي وقهوة مختصة</span>
@@ -195,22 +195,22 @@
   </header>
 
   <!-- ================= HERO SECTION ================= -->
-  <section class="relative bg-gradient-to-b from-[#141a13] via-[#1a2219] to-[#141a13] text-white pt-12 pb-24 overflow-hidden">
+  <section class="relative bg-gradient-to-b from-[#141a13] via-[#1a2219] to-[#141a13] text-white pt-8 sm:pt-12 pb-16 sm:pb-24 overflow-hidden">
     <!-- Ambient Backing Lights -->
     <div class="absolute -top-40 right-1/4 w-96 h-96 bg-[#c89b67]/15 rounded-full blur-3xl pointer-events-none hero-aura-1"></div>
     <div class="absolute -bottom-20 left-10 w-80 h-80 bg-[#1e2e1c]/40 rounded-full blur-2xl pointer-events-none hero-aura-2"></div>
 
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
         
         <!-- Left Content (7 Cols) -->
-        <div class="lg:col-span-7 space-y-6 text-center lg:text-start">
+        <div class="lg:col-span-7 space-y-4 sm:space-y-6 text-center lg:text-start">
           <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/5 border border-[#c89b67]/30 text-xs text-[#f7d794] hero-reveal-1">
             <span class="w-2 h-2 rounded-full bg-[#c89b67] pulse-glow"></span>
             <span data-i18n="hero_badge">أوراق نادرة • حصاد يدوي فاخر 2026</span>
           </div>
 
-          <h1 class="text-3xl sm:text-5xl lg:text-6xl font-bold leading-tight font-serif hero-reveal-2" data-i18n="hero_title">
+          <h1 class="text-2xl sm:text-4xl lg:text-6xl font-bold leading-tight font-serif hero-reveal-2" data-i18n="hero_title">
             تجربة الشاي الفاخر بروح الأصالة والمعاصرة
           </h1>
 
@@ -257,10 +257,10 @@
         </div>
 
         <!-- Right Visual Showcase (5 Cols) -->
-        <div class="lg:col-span-5 relative">
+        <div class="lg:col-span-5 relative max-w-sm mx-auto lg:max-w-none">
           <!-- Main Hero Showcase Card -->
-          <div class="relative rounded-3xl p-6 glass-card-dark shadow-2xl overflow-hidden group hero-float">
-            <div class="relative h-80 sm:h-96 rounded-2xl overflow-hidden mb-5">
+          <div class="relative rounded-3xl p-4 sm:p-6 glass-card-dark shadow-2xl overflow-hidden group hero-float">
+            <div class="relative h-56 sm:h-80 md:h-96 rounded-2xl overflow-hidden mb-4 sm:mb-5">
               <img src="https://images.unsplash.com/photo-1576092768241-dec231879fc3?auto=format&fit=crop&w=1000&q=80" alt="ARKAN Luxury Tea Packaging" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
               
               <!-- Atmospheric Rising Steam Wisps -->
@@ -271,10 +271,10 @@
               </div>
 
               <!-- Floating Card with Cup & Packaging -->
-              <div class="absolute bottom-4 inset-x-4 p-4 rounded-xl bg-[#141a13]/90 backdrop-blur-md border border-[#c89b67]/30 flex items-center justify-between z-20">
-                <div>
-                  <span class="text-[10px] text-[#c89b67] tracking-wider uppercase font-semibold">التوليفة الملكية الخاصة</span>
-                  <h4 class="text-sm font-bold text-white">شاي أسود معتق مع عبوة حافظة</h4>
+              <div class="absolute bottom-3 sm:bottom-4 inset-x-3 sm:inset-x-4 p-3 sm:p-4 rounded-xl bg-[#141a13]/90 backdrop-blur-md border border-[#c89b67]/30 flex items-center justify-between z-20">
+                <div class="min-w-0">
+                  <span class="text-[9px] sm:text-[10px] text-[#c89b67] tracking-wider uppercase font-semibold block truncate">التوليفة الملكية الخاصة</span>
+                  <h4 class="text-xs sm:text-sm font-bold text-white truncate">شاي أسود معتق مع عبوة حافظة</h4>
                 </div>
                 <button onclick="addToCart(1)" class="w-9 h-9 rounded-lg bg-[#c89b67] hover:bg-[#dfb17e] text-stone-950 flex items-center justify-center transition shadow-md">
                   <i data-lucide="plus" class="w-4 h-4"></i>
@@ -359,7 +359,7 @@
   </section>
 
   <!-- ================= SHOP OUR BESTSELLERS & INTERACTIVE SOMMELIER ================= -->
-  <section id="bestsellers" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 scroll-reveal">
+  <section id="bestsellers" class="py-12 sm:py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 scroll-reveal">
     <div class="mb-8">
       <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
         <div>
