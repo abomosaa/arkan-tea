@@ -123,7 +123,7 @@
       
       <!-- Logo & Brand Badge -->
       <a href="index.html" class="flex items-center gap-3 group">
-        <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-[#c89b67] to-[#8c673b] p-0.5 shadow-md flex items-center justify-center shrink-0">
+        <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-[#c89b67] to-[#8c673b] p-0.5 shadow-md flex items-center justify-center shrink-0 logo-shimmer">
           <div class="w-full h-full bg-[#141a13] rounded-[10px] flex items-center justify-center p-1.5">
             <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-full group-hover:scale-110 transition-transform">
               <path d="M22 36V24C22 22.8954 22.8954 22 24 22H36" stroke="#F7D794" stroke-width="6" stroke-linecap="round"/>
@@ -197,29 +197,29 @@
   <!-- ================= HERO SECTION ================= -->
   <section class="relative bg-gradient-to-b from-[#141a13] via-[#1a2219] to-[#141a13] text-white pt-12 pb-24 overflow-hidden">
     <!-- Ambient Backing Lights -->
-    <div class="absolute -top-40 right-1/4 w-96 h-96 bg-[#c89b67]/15 rounded-full blur-3xl pointer-events-none"></div>
-    <div class="absolute -bottom-20 left-10 w-80 h-80 bg-[#1e2e1c]/40 rounded-full blur-2xl pointer-events-none"></div>
+    <div class="absolute -top-40 right-1/4 w-96 h-96 bg-[#c89b67]/15 rounded-full blur-3xl pointer-events-none hero-aura-1"></div>
+    <div class="absolute -bottom-20 left-10 w-80 h-80 bg-[#1e2e1c]/40 rounded-full blur-2xl pointer-events-none hero-aura-2"></div>
 
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
         
         <!-- Left Content (7 Cols) -->
         <div class="lg:col-span-7 space-y-6 text-center lg:text-start">
-          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/5 border border-[#c89b67]/30 text-xs text-[#f7d794]">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/5 border border-[#c89b67]/30 text-xs text-[#f7d794] hero-reveal-1">
             <span class="w-2 h-2 rounded-full bg-[#c89b67] pulse-glow"></span>
             <span data-i18n="hero_badge">أوراق نادرة • حصاد يدوي فاخر 2026</span>
           </div>
 
-          <h1 class="text-3xl sm:text-5xl lg:text-6xl font-bold leading-tight font-serif" data-i18n="hero_title">
+          <h1 class="text-3xl sm:text-5xl lg:text-6xl font-bold leading-tight font-serif hero-reveal-2" data-i18n="hero_title">
             تجربة الشاي الفاخر بروح الأصالة والمعاصرة
           </h1>
 
-          <p class="text-base sm:text-lg text-stone-300 leading-relaxed max-w-2xl font-light" data-i18n="hero_desc">
+          <p class="text-base sm:text-lg text-stone-300 leading-relaxed max-w-2xl font-light hero-reveal-3" data-i18n="hero_desc">
             ننتقي أندر أوراق الشاي من أعلى قمم الجبال العالمية، ونمزجها بعراقة الضيافة العربية لنقدم لك كأساً يلامس الحواس بترف استثنائي.
           </p>
 
           <!-- Flavor Highlights -->
-          <div class="pt-2 flex flex-wrap items-center justify-center lg:justify-start gap-3">
+          <div class="pt-2 flex flex-wrap items-center justify-center lg:justify-start gap-3 hero-reveal-4">
             <span class="text-xs text-[#c89b67] font-medium">نوتات المحصول الملكي:</span>
             <span class="flavor-pill">عسل جبلي نقي</span>
             <span class="flavor-pill">خشب الصندل العتيق</span>
@@ -227,7 +227,7 @@
           </div>
 
           <!-- CTAs -->
-          <div class="pt-4 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+          <div class="pt-4 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 hero-reveal-5">
             <a href="catalog.html" class="w-full sm:w-auto px-8 py-3.5 rounded-xl bg-[#c89b67] hover:bg-[#dfb17e] text-stone-950 font-bold text-sm transition-all transform hover:-translate-y-0.5 shadow-lg shadow-[#c89b67]/20 flex items-center justify-center gap-2">
               <span data-i18n="hero_btn_explore">استكشف التشكيلة الكاملة</span>
               <i data-lucide="arrow-left" class="w-4 h-4 rtl:rotate-0 ltr:rotate-180"></i>
@@ -259,12 +259,19 @@
         <!-- Right Visual Showcase (5 Cols) -->
         <div class="lg:col-span-5 relative">
           <!-- Main Hero Showcase Card -->
-          <div class="relative rounded-3xl p-6 glass-card-dark shadow-2xl overflow-hidden group">
+          <div class="relative rounded-3xl p-6 glass-card-dark shadow-2xl overflow-hidden group hero-float">
             <div class="relative h-80 sm:h-96 rounded-2xl overflow-hidden mb-5">
               <img src="https://images.unsplash.com/photo-1576092768241-dec231879fc3?auto=format&fit=crop&w=1000&q=80" alt="ARKAN Luxury Tea Packaging" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
               
+              <!-- Atmospheric Rising Steam Wisps -->
+              <div class="absolute inset-0 pointer-events-none overflow-hidden z-10">
+                <div class="absolute bottom-16 right-1/3 w-8 h-16 bg-gradient-to-t from-white/25 to-transparent blur-md rounded-full steam-wisp-1"></div>
+                <div class="absolute bottom-20 right-1/2 w-6 h-14 bg-gradient-to-t from-[#f7d794]/25 to-transparent blur-md rounded-full steam-wisp-2"></div>
+                <div class="absolute bottom-14 right-1/4 w-7 h-12 bg-gradient-to-t from-white/20 to-transparent blur-md rounded-full steam-wisp-3"></div>
+              </div>
+
               <!-- Floating Card with Cup & Packaging -->
-              <div class="absolute bottom-4 inset-x-4 p-4 rounded-xl bg-[#141a13]/90 backdrop-blur-md border border-[#c89b67]/30 flex items-center justify-between">
+              <div class="absolute bottom-4 inset-x-4 p-4 rounded-xl bg-[#141a13]/90 backdrop-blur-md border border-[#c89b67]/30 flex items-center justify-between z-20">
                 <div>
                   <span class="text-[10px] text-[#c89b67] tracking-wider uppercase font-semibold">التوليفة الملكية الخاصة</span>
                   <h4 class="text-sm font-bold text-white">شاي أسود معتق مع عبوة حافظة</h4>
@@ -295,7 +302,7 @@
 
   <!-- ================= HERITAGE & CONTEMPORARY CULTURE ================= -->
   <!-- Modernized replacement for the bright orange block from image 1 -->
-  <section id="heritage" class="py-20 bg-gradient-to-r from-[#b5854f] via-[#c89b67] to-[#b5854f] text-stone-950 relative overflow-hidden">
+  <section id="heritage" class="py-20 bg-gradient-to-r from-[#b5854f] via-[#c89b67] to-[#b5854f] text-stone-950 relative overflow-hidden scroll-reveal">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
         
@@ -352,7 +359,7 @@
   </section>
 
   <!-- ================= SHOP OUR BESTSELLERS & INTERACTIVE SOMMELIER ================= -->
-  <section id="bestsellers" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <section id="bestsellers" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 scroll-reveal">
     <div class="mb-8">
       <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
         <div>
@@ -472,7 +479,7 @@
 
   <!-- ================= BENTO GRID: SHOP BY CATEGORIES ================= -->
   <!-- Modernized replacement for the category photos collage in image 1 -->
-  <section class="py-20 bg-[#f3efe9] border-y border-stone-200/60">
+  <section class="py-20 bg-[#f3efe9] border-y border-stone-200/60 scroll-reveal">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center max-w-xl mx-auto mb-12">
         <span class="text-xs font-semibold uppercase tracking-wider text-[#c89b67]" data-i18n="categories_sub">استكشف عالم النكهات</span>
@@ -534,7 +541,7 @@
   </section>
 
   <!-- ================= PRIVATE TEA SALON & CONCIERGE TASTING ================= -->
-  <section class="py-16 bg-gradient-to-b from-[#141a13] to-[#1c241b] text-white relative overflow-hidden">
+  <section class="py-16 bg-gradient-to-b from-[#141a13] to-[#1c241b] text-white relative overflow-hidden scroll-reveal">
     <div class="absolute -top-32 -left-32 w-80 h-80 bg-[#c89b67]/10 rounded-full blur-3xl pointer-events-none"></div>
     <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
       <div class="w-12 h-12 mx-auto mb-4 rounded-2xl bg-[#c89b67]/20 border border-[#c89b67]/40 flex items-center justify-center text-[#f7d794]">
@@ -560,7 +567,7 @@
   </section>
 
   <!-- ================= TEA CEREMONY / BREWING RITUALS ================= -->
-  <section id="ceremony" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <section id="ceremony" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 scroll-reveal">
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
       
       <div class="lg:col-span-5 relative">
@@ -676,7 +683,7 @@
   </section>
 
   <!-- ================= VIP NEWSLETTER SECTION ================= -->
-  <section class="py-16 bg-gradient-to-r from-[#c89b67] via-[#dfb17e] to-[#c89b67] text-stone-950">
+  <section class="py-16 bg-gradient-to-r from-[#c89b67] via-[#dfb17e] to-[#c89b67] text-stone-950 scroll-reveal">
     <div class="max-w-4xl mx-auto px-4 text-center">
       <span class="text-xs font-bold tracking-widest uppercase text-stone-900/80 block mb-2" data-i18n="newsletter_sub">نادي أركان الخاص</span>
       <h2 class="text-2xl sm:text-3xl font-bold font-serif mb-4" data-i18n="newsletter_title">انضم إلى مجتمع الذواقة واحصل على دعوات حصرية لندرات المحاصيل</h2>

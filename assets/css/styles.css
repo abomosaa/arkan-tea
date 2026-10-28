@@ -269,7 +269,159 @@ select:focus-visible {
   border-radius: 4px;
 }
 
-/* Reduced Motion */
+/* ============================================================
+   ADVANCED LUXURY MOTION & EDITORIAL ANIMATIONS
+   ============================================================ */
+
+/* Hero Staggered Reveal on Load */
+@keyframes heroRevealUp {
+  0% {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-reveal-1 {
+  animation: heroRevealUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.1s both;
+}
+
+.hero-reveal-2 {
+  animation: heroRevealUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.25s both;
+}
+
+.hero-reveal-3 {
+  animation: heroRevealUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.4s both;
+}
+
+.hero-reveal-4 {
+  animation: heroRevealUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.55s both;
+}
+
+.hero-reveal-5 {
+  animation: heroRevealUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.7s both;
+}
+
+/* Organic Floating Card Motion */
+@keyframes heroFloatCard {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(0.4deg);
+  }
+}
+
+.hero-float {
+  animation: heroFloatCard 6s ease-in-out infinite;
+  will-change: transform;
+}
+
+/* Ambient Backing Aura Breath */
+@keyframes auraBreath {
+  0%, 100% {
+    transform: scale(1) translate(0, 0);
+    opacity: 0.16;
+  }
+  50% {
+    transform: scale(1.18) translate(-12px, 16px);
+    opacity: 0.28;
+  }
+}
+
+.hero-aura-1 {
+  animation: auraBreath 9s ease-in-out infinite alternate;
+}
+
+.hero-aura-2 {
+  animation: auraBreath 12s ease-in-out 3s infinite alternate;
+}
+
+/* Sacred Logo Gold Glint Shimmer */
+@keyframes logoGlint {
+  0%, 75% {
+    transform: translateX(-150%) skewX(-20deg);
+    opacity: 0;
+  }
+  80% {
+    opacity: 0.6;
+  }
+  90%, 100% {
+    transform: translateX(250%) skewX(-20deg);
+    opacity: 0;
+  }
+}
+
+.logo-shimmer {
+  position: relative;
+  overflow: hidden;
+}
+
+.logo-shimmer::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(247, 215, 148, 0.4) 50%,
+    transparent 100%
+  );
+  animation: logoGlint 7s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  pointer-events: none;
+}
+
+/* Atmospheric Steam Wisps Animation */
+@keyframes steamDrift {
+  0% {
+    transform: translateY(0) scaleX(1);
+    opacity: 0;
+  }
+  25% {
+    opacity: 0.55;
+  }
+  60% {
+    opacity: 0.3;
+    transform: translateY(-28px) scaleX(1.25) translateX(6px);
+  }
+  100% {
+    transform: translateY(-55px) scaleX(1.6) translateX(-8px);
+    opacity: 0;
+  }
+}
+
+.steam-wisp-1 {
+  animation: steamDrift 3.6s ease-out infinite;
+}
+
+.steam-wisp-2 {
+  animation: steamDrift 4.2s ease-out 1.2s infinite;
+}
+
+.steam-wisp-3 {
+  animation: steamDrift 3.8s ease-out 2.1s infinite;
+}
+
+/* Scroll-triggered Section Reveal */
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.scroll-reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Reduced Motion Override */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: 0.01ms !important;
