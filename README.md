@@ -4,7 +4,7 @@
 
 **[المعاينة المباشرة | Live Demo](https://abomosaa.github.io/arkan-tea/)**
 
-![Uploading image.png…]()
+<img width="1763" height="7506" alt="image" src="https://github.com/user-attachments/assets/be7c0dcd-f30d-401f-80fa-9f5031bd5f76" />
 
 ---
 
