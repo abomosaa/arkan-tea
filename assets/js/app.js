@@ -319,7 +319,7 @@ const TRANSLATIONS = {
     nav_home: "الرئيسية",
     nav_catalog: "استكشاف الشاي",
     nav_story: "قصتنا وتراثنا",
-    nav_ceremony: "طقوس التحضير",
+    nav_ceremony: "التحضير",
     nav_bestsellers: "الأكثر مبيعاً",
     nav_contact: "تواصل معنا",
     hero_badge: "أوراق نادرة • حصاد يدوي فاخر 2026",
@@ -756,6 +756,11 @@ function setCategoryFilter(category) {
 
 // Mood Filter
 function filterByMood(mood) {
+  if (currentFilterType === 'mood' && activeFilterValue === mood) {
+    resetFilters();
+    return;
+  }
+
   currentFilterType = 'mood';
   activeFilterValue = mood;
   renderProducts();
